@@ -4,8 +4,9 @@ import json
 import os
 from utils import read_json, write_json
 
-def start_tasks():
-    random_task = get_random_task()
+def get_tasks(amount_of_tasks) -> list[dict, ...]:
+    """Читает задачи из файла и возвращает нужное их количество"""
+    return
 
 
 def get_random_task():

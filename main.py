@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from utils import read_json, write_json, ensure_json_file_exists, register_user, is_registered, get_user_data, update_user_data, delete_user, get_all_users
-from questions import get_random_task
+from questions import get_random_task, get_tasks
 
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
@@ -47,8 +47,7 @@ def callback_query(call):
     if call.data == "cb_test":
         bot.answer_callback_query(call.id)
         bot.send_message(call.message.chat.id, get_random_task()['text'])
-        #bot.answer_callback_query(call.id, "Задача ")
-        
+
     elif call.data == "cb_stats":
         bot.answer_callback_query(call.id, "Мой рейтинг")
         

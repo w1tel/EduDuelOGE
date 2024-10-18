@@ -1,12 +1,12 @@
 import random
 from typing import Any, Dict, Optional, List
 import json
-import os
-from utils import read_json, write_json
 
-def get_tasks(amount_of_tasks) -> list[dict, ...]:
-    """Читает задачи из файла и возвращает нужное их количество"""
-    return
+def get_tasks(amount_of_tasks: int) -> list[dict]:
+    tasks = []
+    with open('questions.json', 'r', encoding='UTF-8') as file:
+        tasks = json.load(file)
+    return [:amount_of_tasks]
 
 
 def get_random_task():

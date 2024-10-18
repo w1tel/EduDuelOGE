@@ -3,7 +3,8 @@ from dotenv import load_dotenv
 import os
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from utils import read_json, write_json, ensure_json_file_exists, register_user, is_registered, get_user_data, update_user_data, delete_user, get_all_users
-from questions import get_random_task, get_tasks
+from questions import get_random_task
+from constants import HELP_COMMAND_TEXT
 
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
@@ -16,7 +17,7 @@ users = {}
 def start_message(message):
   user_id = message.from_user.id
   if not is_registered(user_id):
-    bot.send_message(user_id,'Мы тебя зарегестрировали')
+    bot.send_message(user_id,'Мы тебя зарегестрировали👌')
     user_data = {
       'username':message.from_user.username,
       'statistic': {"total_tets":0, "correct_answers": 0},
@@ -27,7 +28,7 @@ def start_message(message):
     users[user_id] = user_data
     register_user(user_id, user_data)
   else:
-    bot.send_message(user_id,'Ты уже есть в базе данных)')
+    bot.send_message(user_id,'Ты уже есть в базе данных😊')
     
     
   #TODO Удалять сообщения после отправки через какое-то время 
@@ -54,9 +55,10 @@ def callback_query(call):
     elif call.data == "cb_setting":
         bot.answer_callback_query(call.id, "Настройки")
     
-  
 
-
+@bot.message_handler(commands=['help'])
+def help_message(message):
+  bot.send_message(message.chat.id, HELP_COMMAND_TEXT, parse_mode='HTML')
 
 
 

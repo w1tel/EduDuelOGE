@@ -33,9 +33,9 @@ def start_message(message):
     
   #TODO Удалять сообщения после отправки через какое-то время 
   bot.send_message(user_id,"Привет ✌️ ")
-  bot.send_message(user_id, " Я помогу тебе с сдачей экзамена. Выбери, что ты хочешь сделать:", reply_markup=gen_markup())
+  bot.send_message(user_id, " Я помогу тебе с сдачей экзамена. Выбери, что ты хочешь сделать:", reply_markup=get_markup_main_menu())
 
-def gen_markup():
+def get_markup_main_menu():
     markup = InlineKeyboardMarkup()
     markup.row_width = 3
     markup.add(InlineKeyboardButton("Пройти тест", callback_data="cb_test"),
@@ -43,12 +43,24 @@ def gen_markup():
               InlineKeyboardButton("Настройки", callback_data="cb_setting"))
     return markup
 
+def get_markup_test_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 2
+    markup.add(InlineKeyboardButton("Случайный", callback_data="cb_random"),
+              InlineKeyboardButton("Серия", callback_data="cb_series"))
+    return markup
+
+
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
     if call.data == "cb_test":
         bot.answer_callback_query(call.id)
-        bot.send_message(call.message.chat.id, get_random_task()['text'])
-
+        bot.send_message(call.message.chat.id, 'Пройти тест😎', reply_markup=get_markup_test_menu())
+    elif call.data == 'cb_series':
+        bot.answer_callback_query(call.id, "Серия")
+    elif call.data == 'cb_random':
+        bot.answer_callback_query(call.id)
+        bot.send_message(call.message.chat.id, get_random_task()['text'])``
     elif call.data == "cb_stats":
         bot.answer_callback_query(call.id, "Мой рейтинг")
         

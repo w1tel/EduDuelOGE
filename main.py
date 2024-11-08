@@ -13,6 +13,12 @@ bot = telebot.TeleBot(TOKEN)
 users = {}
 
 
+
+STATE_START = "main_menu"
+STATE_WAITING_ANSWER = 1
+
+
+
 @bot.message_handler(commands=['start'])
 def start_message(message):
   user_id = message.from_user.id
@@ -22,7 +28,8 @@ def start_message(message):
       'username':message.from_user.username,
       'statistic': {"total_tets":0, "correct_answers": 0},
       "number_of_tests":3,
-      "state": "main_menu"
+      "state": STATE_START,
+      'correct_answer_question': None
       }
     
     users[user_id] = user_data
@@ -60,7 +67,11 @@ def callback_query(call):
         bot.answer_callback_query(call.id, "Серия")
     elif call.data == 'cb_random':
         bot.answer_callback_query(call.id)
-        bot.send_message(call.message.chat.id, get_random_task()['text'])``
+        random_question = get_random_task()
+        bot.send_message(call.message.chat.id, random_question['text'])
+        user_id = call.from_user.id
+        users[user_id]['state'] = STATE_WAITING_ANSWER
+        users[user_id]['correct_answer_question'] = random_question['correct_answer']
     elif call.data == "cb_stats":
         bot.answer_callback_query(call.id, "Мой рейтинг")
         
@@ -72,8 +83,17 @@ def callback_query(call):
 def help_message(message):
   bot.send_message(message.chat.id, HELP_COMMAND_TEXT, parse_mode='HTML')
 
-
-
+@bot.message_handler(func=lambda message: True)
+def handle_message(message):
+    user_id = message.from_user.id
+    current_state = users[user_id]['state']
+    if current_state == STATE_WAITING_ANSWER:
+      user_answer = message.text
+      if user_answer == users[user_id]['correct_answer_question']:
+        bot.send_message(user_id, f'Правельный ответ!')
+      else:
+        bot.send_message(user_id, f'Увы ответ не верный!')
+        users[user_id]['state'] = STATE_START
 
 
 

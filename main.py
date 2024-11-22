@@ -114,6 +114,10 @@ def handle_message(message):
     user_id = message.from_user.id
     user_message = message.text
     logger.info(f"User {user_id} (type: {type(user_id)}) sent a message: {user_message} (type: {type(user_message)})")
+    user_keys = list(users.keys())
+    user_keys_info = ", ".join([f"{key} (type: {type(key)})" for key in user_keys])
+    logger.info(f"Current keys in 'users' dictionary: {user_keys_info}")
+
     
     current_state = users[user_id]['state']
     if current_state == STATE_WAITING_ANSWER:

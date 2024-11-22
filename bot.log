@@ -1,0 +1,258 @@
+2024-11-22 18:38:16,843 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-22 18:38:16,844 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-22 18:38:20,218 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-22 18:38:21,596 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-22 18:38:21,651 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 44 строки, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке Windows-1251. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-22 18:38:21,742 - TeleBot - ERROR - Infinity polling exception: 1845480898
+2024-11-22 18:38:21,744 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 99, in callback_query
+    users[user_id]['state'] = STATE_WAITING_ANSWER
+    ~~~~~^^^^^^^^^
+KeyError: 1845480898
+
+2024-11-22 18:38:24,845 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 24 (type: <class 'str'>)
+2024-11-22 18:38:24,846 - TeleBot - ERROR - Infinity polling exception: 1845480898
+2024-11-22 18:38:24,847 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 118, in handle_message
+    current_state = users[user_id]['state']
+                    ~~~~~^^^^^^^^^
+KeyError: 1845480898
+
+2024-11-22 18:38:24,892 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 24 (type: <class 'str'>)
+2024-11-22 18:38:27,850 - TeleBot - ERROR - Infinity polling exception: 1845480898
+2024-11-22 18:38:27,852 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 118, in handle_message
+    current_state = users[user_id]['state']
+                    ~~~~~^^^^^^^^^
+KeyError: 1845480898
+
+2024-11-22 18:42:57,412 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-22 18:42:57,415 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-22 18:43:00,679 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-22 18:43:04,051 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-22 18:43:04,216 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 34 строки, в каждой строке 40 символов. Определите информационный объём рассказа в Кбайтах в кодировке UTF-8. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-22 18:43:04,369 - TeleBot - ERROR - Infinity polling exception: 1845480898
+2024-11-22 18:43:04,371 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 99, in callback_query
+    users[user_id]['state'] = STATE_WAITING_ANSWER
+    ~~~~~^^^^^^^^^
+KeyError: 1845480898
+
+2024-11-22 18:43:07,536 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 22 (type: <class 'str'>)
+2024-11-22 18:43:07,537 - TeleBot - ERROR - Infinity polling exception: 'dict_keys' object is not subscriptable
+2024-11-22 18:43:07,539 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 117, in handle_message
+    logger.info(f'users.keys()[0] {users.keys()[0]}')
+                                   ~~~~~~~~~~~~^^^
+TypeError: 'dict_keys' object is not subscriptable
+
+2024-11-22 18:43:07,666 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 22 (type: <class 'str'>)
+2024-11-22 18:43:10,542 - TeleBot - ERROR - Infinity polling exception: 'dict_keys' object is not subscriptable
+2024-11-22 18:43:10,544 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 117, in handle_message
+    logger.info(f'users.keys()[0] {users.keys()[0]}')
+                                   ~~~~~~~~~~~~^^^
+TypeError: 'dict_keys' object is not subscriptable
+
+2024-11-22 18:43:48,095 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-22 18:43:48,097 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-22 18:43:49,441 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-22 18:43:50,531 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-22 18:43:50,674 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 7 страниц, на каждой странице 38 строк, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке Unicode, в которой каждый символ кодируется 16 битами. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-22 18:43:50,777 - TeleBot - ERROR - Infinity polling exception: 1845480898
+2024-11-22 18:43:50,777 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 99, in callback_query
+    users[user_id]['state'] = STATE_WAITING_ANSWER
+    ~~~~~^^^^^^^^^
+KeyError: 1845480898
+
+2024-11-22 18:43:52,737 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 22 (type: <class 'str'>)
+2024-11-22 18:43:52,737 - __main__ - INFO - users.keys() dict_keys([])
+2024-11-22 18:43:53,781 - TeleBot - ERROR - Infinity polling exception: 1845480898
+2024-11-22 18:43:53,784 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 119, in handle_message
+    current_state = users[user_id]['state']
+                    ~~~~~^^^^^^^^^
+KeyError: 1845480898
+
+2024-11-22 18:50:05,304 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-22 18:50:05,306 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-22 18:50:06,564 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-22 18:50:07,729 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-22 18:50:07,808 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 34 строки, в каждой строке 40 символов. Определите информационный объём рассказа в Кбайтах в кодировке UTF-8. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-22 18:50:07,897 - TeleBot - ERROR - Infinity polling exception: 1845480898
+2024-11-22 18:50:07,898 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 99, in callback_query
+    users[user_id]['state'] = STATE_WAITING_ANSWER
+    ~~~~~^^^^^^^^^
+KeyError: 1845480898
+
+2024-11-22 18:50:10,431 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 2 (type: <class 'str'>)
+2024-11-22 18:50:10,431 - __main__ - INFO - Current keys in 'users' dictionary: 
+2024-11-22 18:50:10,902 - TeleBot - ERROR - Infinity polling exception: 1845480898
+2024-11-22 18:50:10,904 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 122, in handle_message
+    current_state = users[user_id]['state']
+                    ~~~~~^^^^^^^^^
+KeyError: 1845480898
+

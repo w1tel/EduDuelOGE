@@ -90,9 +90,9 @@ def handle_message(message):
     if current_state == STATE_WAITING_ANSWER:
       user_answer = message.text
       if user_answer == users[user_id]['correct_answer_question']:
-        bot.send_message(user_id, f'Правельный ответ!')
+        bot.send_message(user_id, f'Правильный ответ!')
       else:
-        bot.send_message(user_id, f'Увы ответ не верный!')
+        bot.send_message(user_id, f'Увы, ответ не верный!')
         users[user_id]['state'] = STATE_START
 
 

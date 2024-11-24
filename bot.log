@@ -256,3 +256,36 @@ Traceback (most recent call last):
                     ~~~~~^^^^^^^^^
 KeyError: 1845480898
 
+2024-11-24 16:23:10,993 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-24 16:23:10,994 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-24 16:23:12,612 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-24 16:23:13,925 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-24 16:23:13,992 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 8 страниц, на каждой странице 42 строки, в каждой строке 48 символов. Определите информационный объём рассказа в Кбайтах в кодировке ASCII. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-24 16:23:17,082 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 22 (type: <class 'str'>)
+2024-11-24 16:23:17,082 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>)
+2024-11-24 16:25:11,822 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-24 16:25:11,823 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-24 16:25:13,373 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-24 16:25:14,376 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-24 16:25:14,433 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 34 строки, в каждой строке 40 символов. Определите информационный объём рассказа в Кбайтах в кодировке UTF-8. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-24 16:25:30,453 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 7 (type: <class 'str'>)
+2024-11-24 16:25:30,453 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>)
+2024-11-24 16:25:47,135 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-24 16:25:47,136 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-24 16:25:48,498 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-24 16:25:49,266 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-24 16:25:49,326 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 2 страницы, на каждой странице 43 строки, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке UTF-32. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-24 16:26:54,249 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-24 16:26:54,250 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-24 16:26:56,085 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-24 16:26:57,243 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-24 16:26:57,308 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 2 страницы, на каждой странице 43 строки, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке UTF-32. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-24 16:27:01,686 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 8 (type: <class 'str'>)
+2024-11-24 16:27:01,686 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>)
+2024-11-24 16:27:08,978 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-24 16:27:08,980 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-24 16:27:10,752 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-24 16:27:11,762 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-24 16:27:11,822 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 8 страниц, на каждой странице 42 строки, в каждой строке 48 символов. Определите информационный объём рассказа в Кбайтах в кодировке ASCII. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-24 16:27:15,511 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 22 (type: <class 'str'>)
+2024-11-24 16:27:15,511 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>)

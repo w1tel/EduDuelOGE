@@ -82,8 +82,19 @@ def delete_user(user_id: int, file_path: str = 'users.json') -> bool:
 
     return True
 
-def get_all_users(file_path: str = 'users.json') -> List[str]:
+def get_all_users_data(file_path: str = 'users.json'):
     ''' Возвращает список всех пользователей.'''
     with open(file_path, 'r', encoding='utf-8') as json_file:
         users = json.load(json_file)
-    return list(users.keys())
+    return users
+
+def convert_keys_to_numbers(users):
+    converted_users = {} 
+    for key, value in users.items():
+        try:
+            key = int(key)
+            converted_users[key] = value
+        except ValueError:
+            print(f"Пропущен ключ: '{key}' (не является числом)")
+    return converted_users
+

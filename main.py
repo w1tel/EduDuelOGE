@@ -3,7 +3,10 @@ import logging
 from dotenv import load_dotenv
 import os
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
-from utils import read_json, write_json, ensure_json_file_exists, register_user, is_registered, get_user_data, update_user_data, delete_user, get_all_users
+from utils import register_user
+from utils import is_registered
+from utils import get_all_users_data
+from utils import convert_keys_to_numbers
 from questions import get_random_task
 from constants import HELP_COMMAND_TEXT
 
@@ -22,7 +25,8 @@ load_dotenv()
 TOKEN = os.getenv("TOKEN")
 
 bot = telebot.TeleBot(TOKEN)
-users = {}
+users = get_all_users_data()
+users = convert_keys_to_numbers(users)
 
 
 
@@ -54,7 +58,7 @@ def start_message(message):
   else:
     logger.info(f"User {user_id} (type: {user_type}) is already registered")
     bot.send_message(user_id,'Ты уже есть в базе данных😊')
-    
+      
     
   #TODO Удалять сообщения после отправки через какое-то время 
   bot.send_message(user_id,"Привет ✌️ ")

@@ -7,6 +7,7 @@ from utils import register_user
 from utils import is_registered
 from utils import get_all_users_data
 from utils import convert_keys_to_numbers
+from questions import get_random_tasks
 from questions import get_random_task
 from constants import HELP_COMMAND_TEXT
 
@@ -47,7 +48,7 @@ def start_message(message):
     bot.send_message(user_id,'Мы тебя зарегестрировали👌')
     user_data = {
       'username':message.from_user.username,
-      'statistic': {"total_tets":0, "correct_answers": 0},
+      'statistic': {"total_tests":0, "correct_answers": 0},
       "number_of_tests":3,
       "state": STATE_START,
       'correct_answer_question': None
@@ -90,7 +91,9 @@ def callback_query(call):
         bot.answer_callback_query(call.id)
         bot.send_message(call.message.chat.id, 'Пройти тест😎', reply_markup=get_markup_test_menu())
     elif call.data == 'cb_series':
+        number_of_tests = users[user_id]['number_of_tests']
         bot.answer_callback_query(call.id, "Серия")
+        questions = get_random_tasks(number_of_tests)
     elif call.data == 'cb_random':
         bot.answer_callback_query(call.id)
         random_question = get_random_task()

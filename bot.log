@@ -289,3 +289,299 @@ KeyError: 1845480898
 2024-11-24 16:27:11,822 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 8 страниц, на каждой странице 42 строки, в каждой строке 48 символов. Определите информационный объём рассказа в Кбайтах в кодировке ASCII. Ответ округлите до целого. (type: <class 'dict'>)
 2024-11-24 16:27:15,511 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 22 (type: <class 'str'>)
 2024-11-24 16:27:15,511 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>)
+2024-11-30 17:45:32,585 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-30 17:45:32,586 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-30 17:45:34,644 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-30 17:45:35,821 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-11-30 17:45:35,893 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 34 строки, в каждой строке 40 символов. Определите информационный объём рассказа в Кбайтах в кодировке UTF-8. Ответ округлите до целого. (type: <class 'dict'>)
+2024-11-30 17:45:41,371 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 54 (type: <class 'str'>)
+2024-11-30 17:45:41,372 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>)
+2024-11-30 17:46:30,108 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-30 17:46:30,108 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-30 17:46:31,547 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-30 17:46:32,552 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2024-11-30 17:46:34,968 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2024-11-30 17:55:28,465 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:28,465 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:55:31,900 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:31,901 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:55:32,223 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:32,224 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:55:33,118 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-30 17:55:33,118 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-30 17:55:33,228 - TeleBot - ERROR - Infinity polling exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2024-11-30 17:55:35,779 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:35,781 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:55:39,451 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:39,452 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:55:40,508 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:40,510 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:55:44,191 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:44,192 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:55:46,246 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:46,247 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:55:49,806 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:49,806 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:55:53,866 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-11-30 17:55:53,866 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-11-30 17:56:02,993 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-30 17:56:02,994 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-30 17:56:04,399 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-30 17:56:05,601 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2024-11-30 17:56:05,605 - TeleBot - ERROR - Infinity polling exception: cannot access local variable 'number_of_tests' where it is not associated with a value
+2024-11-30 17:56:05,606 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\aleks\School python projects\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aleks\School python projects\-EduDuelOGE\main.py", line 93, in callback_query
+    number_of_tests = users[user_id][number_of_tests]
+                                     ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'number_of_tests' where it is not associated with a value
+
+2024-11-30 17:57:43,118 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-11-30 17:57:43,121 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-11-30 17:57:44,458 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-11-30 17:57:45,265 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)

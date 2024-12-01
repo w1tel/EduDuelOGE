@@ -2,7 +2,17 @@
     "1845480898": {
         "username": "J_S_0_o_N",
         "statistic": {
-            "total_tets": 0,
+            "total_tests": 0,
+            "correct_answers": 0
+        },
+        "number_of_tests": 3,
+        "state": "main_menu",
+        "correct_answer_question": null
+    },
+    "180616110": {
+        "username": "mosqitu",
+        "statistic": {
+            "total_tests": 0,
             "correct_answers": 0
         },
         "number_of_tests": 3,

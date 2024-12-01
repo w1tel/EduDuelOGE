@@ -7,6 +7,7 @@ from utils import register_user
 from utils import is_registered
 from utils import get_all_users_data
 from utils import convert_keys_to_numbers
+from utils import update_user_data
 from questions import get_random_tasks
 from questions import get_random_task
 from constants import HELP_COMMAND_TEXT
@@ -26,7 +27,7 @@ load_dotenv()
 TOKEN = os.getenv("TOKEN")
 
 bot = telebot.TeleBot(TOKEN)
-users = get_all_users_data()
+users = get_all_users_data() # загружаем пользователей из json файла
 users = convert_keys_to_numbers(users)
 
 
@@ -45,7 +46,7 @@ def start_message(message):
   
   if not is_registered(user_id):
     logger.info(f"Registering new user: {user_id} (type: {user_type})")
-    bot.send_message(user_id,'Мы тебя зарегестрировали👌')
+    bot.send_message(user_id,'Мы тебя зарегистрировали👌')
     user_data = {
       'username':message.from_user.username,
       'statistic': {"total_tests":0, "correct_answers": 0},
@@ -131,11 +132,13 @@ def handle_message(message):
       user_answer = message.text
       if user_answer == users[user_id]['correct_answer_question']:
         bot.send_message(user_id, f'Правильный ответ!')
+        users[user_id]['statistic']['correct_answers'] += 1
+        users[user_id]['statistic']['total_tests'] += 1
       else:
         bot.send_message(user_id, f'Увы, ответ не верный!')
+        users[user_id]['statistic']['total_tests'] += 1
         users[user_id]['state'] = STATE_START
-
-
+      update_user_data(user_id,  users[user_id])
 
 bot.infinity_polling()
 

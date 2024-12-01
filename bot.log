@@ -585,3 +585,45 @@ UnboundLocalError: cannot access local variable 'number_of_tests' where it is no
 2024-11-30 17:57:43,121 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
 2024-11-30 17:57:44,458 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
 2024-11-30 17:57:45,265 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2024-12-01 16:43:36,252 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-12-01 16:43:36,253 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-12-01 16:43:37,476 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-12-01 16:43:38,969 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2024-12-01 16:43:56,358 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-12-01 16:43:56,772 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 34 строки, в каждой строке 40 символов. Определите информационный объём рассказа в Кбайтах в кодировке UTF-8. Ответ округлите до целого. (type: <class 'dict'>)
+2024-12-01 16:44:16,745 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 7 (type: <class 'str'>)
+2024-12-01 16:44:16,745 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>)
+2024-12-01 17:12:37,959 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-12-01 17:12:37,962 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-12-01 17:13:07,671 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent /start command
+2024-12-01 17:13:07,672 - __main__ - INFO - Registering new user: 180616110 (type: <class 'int'>)
+2024-12-01 17:13:19,627 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-12-01 17:13:39,954 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2024-12-01 17:13:41,585 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2024-12-01 17:13:43,241 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-12-01 17:13:43,675 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-12-01 17:13:43,775 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 44 строки, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке Windows-1251. Ответ округлите до целого. (type: <class 'dict'>)
+2024-12-01 17:13:47,856 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-12-01 17:13:47,923 - __main__ - INFO - User 180616110 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 34 строки, в каждой строке 40 символов. Определите информационный объём рассказа в Кбайтах в кодировке UTF-8. Ответ округлите до целого. (type: <class 'dict'>)
+2024-12-01 17:13:51,132 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 24 (type: <class 'str'>)
+2024-12-01 17:13:51,133 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>), 180616110 (type: <class 'int'>)
+2024-12-01 17:13:58,255 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 21 (type: <class 'str'>)
+2024-12-01 17:13:58,256 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>), 180616110 (type: <class 'int'>)
+2024-12-01 17:19:45,895 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-12-01 17:19:45,896 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered
+2024-12-01 17:19:47,417 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-12-01 17:19:48,460 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-12-01 17:19:48,537 - __main__ - INFO - User 1845480898 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 44 строки, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке Windows-1251. Ответ округлите до целого. (type: <class 'dict'>)
+2024-12-01 17:19:52,162 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 11 (type: <class 'str'>)
+2024-12-01 17:19:52,163 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>), 180616110 (type: <class 'int'>)
+2024-12-01 17:19:57,647 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent /start command
+2024-12-01 17:19:57,649 - __main__ - INFO - User 180616110 (type: <class 'int'>) is already registered
+2024-12-01 17:19:59,723 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2024-12-01 17:20:01,225 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-12-01 17:20:01,281 - __main__ - INFO - User 180616110 received random question: Рассказ, набранный на компьютере, содержит 8 страниц, на каждой странице 42 строки, в каждой строке 48 символов. Определите информационный объём рассказа в Кбайтах в кодировке ASCII. Ответ округлите до целого. (type: <class 'dict'>)
+2024-12-01 17:20:02,773 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 31 (type: <class 'str'>)
+2024-12-01 17:20:02,774 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>), 180616110 (type: <class 'int'>)
+2024-12-01 17:20:19,877 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2024-12-01 17:20:19,935 - __main__ - INFO - User 180616110 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 44 строки, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке Windows-1251. Ответ округлите до целого. (type: <class 'dict'>)
+2024-12-01 17:20:22,067 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 234 (type: <class 'str'>)
+2024-12-01 17:20:22,068 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>), 180616110 (type: <class 'int'>)

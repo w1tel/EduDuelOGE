@@ -2,8 +2,27 @@ from typing import Any, Dict, Optional, List
 import json
 import os
 
+from typing import TypedDict, Dict, Optional
 
-def read_json(file_path: str) -> Any:  
+
+class Statistic(TypedDict):
+    total_tests: int
+    correct_answers: int
+
+
+class User(TypedDict):
+    username: str
+    statistic: Statistic
+    number_of_tests: int
+    state: str
+    correct_answer_question: Optional[int]
+
+
+# Основной словарь
+Users = Dict[int, User]
+
+# ========== Функции для работы с json файлами ========== НАЧАЛО
+def read_json(file_path: str) -> Any:   
     ''''Читает данные из JSON-файла.
     возвращает python объект'''
     with open(file_path, 'r', encoding='utf-8') as json_file:
@@ -24,15 +43,19 @@ def ensure_json_file_exists(file_path, default_content=None, encoding='utf-8'):
             write_json(file_path, default_content)
         else:
             write_json(file_path, {})
+            
+# ========== Функции для работы с json файлами ========== КОНЕЦ
 
-def register_user(user_id: int, user_data: Dict[str, Any], file_path: str = 'users.json') -> bool:
+# ========== Функции для работы с пользователями ========== НАЧАЛО
+
+def register_user(user_id: int, user_data: User, file_path: str = 'users.json') -> bool:
         ''' Регистрирует нового пользователя.'''
         try:
-            users = read_json(file_path)
+            users = get_users(file_path)
         except FileNotFoundError:
             users = {}
 
-        if str(user_id) in users:
+        if user_id in users:
             print("Пользователь с данным ID уже зарегистрирован.")
             return False
         
@@ -45,8 +68,8 @@ def register_user(user_id: int, user_data: Dict[str, Any], file_path: str = 'use
 def is_registered(user_id: int, file_path: str = 'users.json') -> bool:
     ''' Проверяет, зарегистрирован ли пользователь.'''
     try:
-        users = read_json(file_path)
-        return str(user_id) in users
+        users = get_users(file_path)
+        return user_id in users
     except FileNotFoundError:
         return False
     except json.JSONDecodeError:
@@ -55,16 +78,16 @@ def is_registered(user_id: int, file_path: str = 'users.json') -> bool:
         print(f"Ошибка при чтении файла {file_path}: {e}")
         return False
 
-def get_user_data(user_id: int, file_path: str = 'users.json') -> Optional[Dict[str, Any]]:
+def get_user(user_id: int, file_path: str = 'users.json') -> User:
     '''Получает данные пользователя.'''
-    users = read_json(file_path)
+    users = get_users(file_path)
     if user_id not in users:
         return False
     return users
 
-def update_user_data(user_id: int, new_data: Dict[str, Any], file_path: str = 'users.json') -> bool:
+def update_user(user_id: int, new_data: User, file_path: str = 'users.json') -> bool:
     '''Обновляет данные пользователя.'''
-    users = read_json(file_path)
+    users = get_users(file_path)
     if user_id not in users:
         return False
     users[user_id].update(new_data)
@@ -73,20 +96,17 @@ def update_user_data(user_id: int, new_data: Dict[str, Any], file_path: str = 'u
 
 def delete_user(user_id: int, file_path: str = 'users.json') -> bool:
     ''' Удаляет пользователя из базы данных.'''
-    users = read_json(file_path)
+    users = get_users(file_path)
     if user_id not in users:
         return False
     del users[user_id]
-    with open(file_path, 'w', encoding='utf-8') as json_file:
-        json.dump(users, json_file, ensure_ascii=False, indent=4)
+    write_json(file_path, users)
 
     return True
 
-def get_all_users_data(file_path: str = 'users.json'):
+def get_users(file_path: str = 'users.json') -> Users:
     ''' Возвращает список всех пользователей.'''
-    with open(file_path, 'r', encoding='utf-8') as json_file:
-        users = json.load(json_file)
-    return users
+    return convert_keys_to_numbers(read_json(file_path)) 
 
 def convert_keys_to_numbers(users):
     converted_users = {} 
@@ -98,3 +118,4 @@ def convert_keys_to_numbers(users):
             print(f"Пропущен ключ: '{key}' (не является числом)")
     return converted_users
 
+# ========== Функции для работы с пользователями ========== КОНЕЦ

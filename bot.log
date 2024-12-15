@@ -627,3 +627,5 @@ UnboundLocalError: cannot access local variable 'number_of_tests' where it is no
 2024-12-01 17:20:19,935 - __main__ - INFO - User 180616110 received random question: Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 44 строки, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке Windows-1251. Ответ округлите до целого. (type: <class 'dict'>)
 2024-12-01 17:20:22,067 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 234 (type: <class 'str'>)
 2024-12-01 17:20:22,068 - __main__ - INFO - Current keys in 'users' dictionary: 1845480898 (type: <class 'int'>), 180616110 (type: <class 'int'>)
+2024-12-01 17:24:39,081 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent /start command
+2024-12-01 17:24:39,083 - __main__ - INFO - User 1845480898 (type: <class 'int'>) is already registered

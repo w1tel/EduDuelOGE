@@ -16,7 +16,8 @@ class User(TypedDict):
     number_of_tests: int
     state: str
     correct_answer_question: Optional[int]
-
+    seria_of_questions: list
+    
 
 # Основной словарь
 Users = Dict[int, User]
@@ -83,7 +84,7 @@ def get_user(user_id: int, file_path: str = 'users.json') -> User:
     users = get_users(file_path)
     if user_id not in users:
         return False
-    return users
+    return users[user_id]
 
 def update_user(user_id: int, new_data: User, file_path: str = 'users.json') -> bool:
     '''Обновляет данные пользователя.'''

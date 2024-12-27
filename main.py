@@ -27,8 +27,8 @@ bot = telebot.TeleBot(TOKEN)
 
 
 STATE_START = "main_menu"
-STATE_WAITING_ANSWER = 1
-
+STATE_WAITING_ANSWER = 'waitting_answer'
+STATE_SERIA_QUESTIONS = 'seria_questions'
 
 @bot.message_handler(commands=["start"])
 def start_message(message):
@@ -77,11 +77,24 @@ def callback_query(call):
         )
     elif call.data == "cb_series":
         user = get_user(user_id)
+        
         number_of_tests = user["number_of_tests"]
+        
         bot.answer_callback_query(call.id, "Серия")
+        
         questions = get_random_tasks(number_of_tests)
+        
+        user['state'] = STATE_SERIA_QUESTIONS
+        user['seria_of_questions'].clear()
         user['seria_of_questions'].extend(questions)
         update_user(user_id, user)
+        
+
+        question = user['seria_of_questions'][0]
+        text_of_question = question['text']
+        correct_answer = question['correct_answer']
+        user["correct_answer_question"] = correct_answer
+        bot.send_message(call.message.chat.id, text_of_question)
     elif call.data == "cb_random":
         bot.answer_callback_query(call.id)
         random_question = get_random_task()
@@ -90,12 +103,12 @@ def callback_query(call):
         logger.info(
             f"User {user_id} received random question: {random_question['text']} (type: {question_type})"
         )
-
         bot.send_message(call.message.chat.id, random_question["text"])
         user_id = call.from_user.id
         user = get_user(user_id)
         user["state"] = STATE_WAITING_ANSWER
         user["correct_answer_question"] = random_question["correct_answer"]
+
         update_user(user_id, user)
     elif call.data == "cb_stats":
         bot.answer_callback_query(call.id, "Мой рейтинг")
@@ -108,30 +121,44 @@ def callback_query(call):
 def help_message(message):
     bot.send_message(message.chat.id, HELP_COMMAND_TEXT, parse_mode="HTML")
 
-
+# обработчик ответов пользователя(проверяет на правильность ответа)
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
     user_id = message.from_user.id
     user_message = message.text
-    # logger.info(
-    #     f"User {user_id} (type: {type(user_id)}) sent a message: {user_message} (type: {type(user_message)})"
-#     )
-#     user_keys = list(users.keys())
-#     user_keys_info = ", ".join([f"{key} (type: {type(key)})" for key in user_keys])
-#     logger.info(f"Current keys in 'users' dictionary: {user_keys_info}")
+    logger.info(
+        f"User {user_id} (type: {type(user_id)}) sent a message: {user_message} (type: {type(user_message)})"
+    )
+    user = get_user(user_id)
+    current_state = user["state"]
+    if current_state == STATE_WAITING_ANSWER:
+        user_answer = message.text
+        if user_answer == user["correct_answer_question"]:
+            bot.send_message(user_id, f"Правильный ответ!")
+            user["statistic"]["correct_answers"] += 1
+            user["statistic"]["total_tests"] += 1
+        else:
+            bot.send_message(user_id, f"Увы, ответ не верный!")
+            user["statistic"]["total_tests"] += 1
+            user["state"] = STATE_START
+        user["correct_answer_question"] = None
+        update_user(user_id, user)
+    elif current_state == STATE_SERIA_QUESTIONS:
+        user_answer = message.text
 
-#     current_state = users[user_id]["state"]
-#     if current_state == STATE_WAITING_ANSWER:
-#         user_answer = message.text
-#         if user_answer == users[user_id]["correct_answer_question"]:
-#             bot.send_message(user_id, f"Правильный ответ!")
-#             users[user_id]["statistic"]["correct_answers"] += 1
-#             users[user_id]["statistic"]["total_tests"] += 1
-#         else:
-#             bot.send_message(user_id, f"Увы, ответ не верный!")
-#             users[user_id]["statistic"]["total_tests"] += 1
-#             users[user_id]["state"] = STATE_START
-#         update_user_data(user_id, users[user_id])
+        if user_answer == user["correct_answer_question"]:
+            bot.send_message(user_id, f"Правильный ответ!")
+            user["statistic"]["correct_answers"] += 1
+            user["statistic"]["total_tests"] += 1
+        else:
+            bot.send_message(user_id, f"Увы, ответ не верный!")
+            user["statistic"]["total_tests"] += 1
+            user["state"] = STATE_START
+        
+        # логика задавания следующего вопроса или окончания серии 
+        user["seria_of_questions"][1]
 
+def next_question(index_of_current_question, max_count_question, questions):
+    pass
 
-# bot.infinity_polling()
+bot.infinity_polling()

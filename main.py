@@ -62,6 +62,14 @@ def start_message(message):
     )
 
 
+def get_seria_question(user):
+        if user['seria_of_questions']:
+            question = user['seria_of_questions'][0]
+            text_of_question = question['text']
+            correct_answer = question['correct_answer']
+            user["correct_answer_question"] = correct_answer
+            return text_of_question
+        return False
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
     user_id = call.from_user.id
@@ -88,13 +96,8 @@ def callback_query(call):
         user['seria_of_questions'].clear()
         user['seria_of_questions'].extend(questions)
         update_user(user_id, user)
-        
-
-        question = user['seria_of_questions'][0]
-        text_of_question = question['text']
-        correct_answer = question['correct_answer']
-        user["correct_answer_question"] = correct_answer
-        bot.send_message(call.message.chat.id, text_of_question)
+    
+        bot.send_message(call.message.chat.id, get_seria_question(user))
     elif call.data == "cb_random":
         bot.answer_callback_query(call.id)
         random_question = get_random_task()
@@ -150,12 +153,17 @@ def handle_message(message):
         else:
             bot.send_message(user_id, f"Увы, ответ не верный!")
             user["statistic"]["total_tests"] += 1
-            user["state"] = STATE_START
+            
         
         # логика задавания следующего вопроса или окончания серии 
-        user["seria_of_questions"][1]
-
-def next_question(index_of_current_question, max_count_question, questions):
-    pass
-
+        next_question(user, user_id)
+        question = get_seria_question(user)
+        if question:
+            bot.send_message(user_id, question)
+        else:
+            bot.send_message(user_id, f"Вопроы в серии закончились")
+            user['state'] = STATE_START
+def next_question(user, user_id):
+    user['seria_of_questions'].pop(0)
+    update_user(user_id=user_id, new_data=user)
 bot.infinity_polling()

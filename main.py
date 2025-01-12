@@ -98,11 +98,7 @@ def callback_query(call):
     elif call.data == "cb_random":
         bot.answer_callback_query(call.id)
         random_question = get_random_task()
-
-        question_type = type(random_question)
-        logger.info(
-            f"User {user_id} received random question: {random_question['text']} (type: {question_type})"
-        )
+    
         bot.send_message(call.message.chat.id, random_question["text"])
         user_id = call.from_user.id
         user = get_user(user_id)
@@ -111,8 +107,9 @@ def callback_query(call):
 
         update_user(user_id, user)
     elif call.data == "cb_stats":
+        user = get_user(user_id)
         bot.answer_callback_query(call.id, "Мой рейтинг")
-
+        bot.send_message(call.message.chat.id, f'Твоя статистика \nПравильно решеных тестов: {user['statistic']['correct_answers']} \nВсего решено тестов: {user['statistic']['total_tests']}')
     elif call.data == "cb_setting":
         bot.answer_callback_query(call.id, "Настройки")
 

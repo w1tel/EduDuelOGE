@@ -2,7 +2,7 @@ import telebot
 import logging
 from dotenv import load_dotenv
 import os
-from inline_keyboards import get_markup_main_menu, get_markup_test_menu
+from inline_keyboards import get_markup_main_menu, get_markup_test_menu, get_markup_settings_menu
 from utils import register_user
 from utils import is_registered
 from utils import update_user
@@ -51,7 +51,7 @@ def start_message(message):
         register_user(user_id, user_data)
     else:
         logger.info(f"User {user_id} is already registered")
-        bot.send_message(user_id, "Ты уже есть в базе данных😊")
+        bot.send_message(user_id, "Ты уже есть в базе данных")
 
     # TODO Удалять сообщения после отправки через какое-то время
     bot.send_message(user_id, "Привет ✌️ ")
@@ -81,7 +81,7 @@ def callback_query(call):
     if call.data == "cb_test":
         bot.answer_callback_query(call.id)
         bot.send_message(
-            call.message.chat.id, "Пройти тест😎", reply_markup=get_markup_test_menu()
+            call.message.chat.id, "Пройти тест", reply_markup=get_markup_test_menu()
         )
     elif call.data == "cb_series":
         user = get_user(user_id)
@@ -96,7 +96,8 @@ def callback_query(call):
         user['seria_of_questions'].clear()
         user['seria_of_questions'].extend(questions)
         update_user(user_id, user)
-    
+        #нужно выводить колличество вопросов в серии
+        bot.send_message(call.message.chat.id, f'Задача - 1/{number_of_tests}')
         bot.send_message(call.message.chat.id, get_seria_question(user))
     elif call.data == "cb_random":
         bot.answer_callback_query(call.id)
@@ -115,8 +116,10 @@ def callback_query(call):
         bot.send_message(call.message.chat.id, f'Твоя статистика \nПравильно решеных тестов: {user['statistic']['correct_answers']} \nВсего решено тестов: {user['statistic']['total_tests']}')
     elif call.data == "cb_setting":
         bot.answer_callback_query(call.id, "Настройки")
-
-
+        bot.send_message(call.message.chat.id, "Настройки", reply_markup=get_markup_settings_menu())
+    elif call.data == "cb_number_of_tests":
+        bot.answer_callback_query(call.id)
+        bot.send_message(call.message.chat.id, )
 @bot.message_handler(commands=["help"])
 def help_message(message):
     bot.send_message(message.chat.id, HELP_COMMAND_TEXT, parse_mode="HTML")
@@ -144,8 +147,8 @@ def handle_message(message):
         user["correct_answer_question"] = None
         update_user(user_id, user)
     elif current_state == STATE_SERIA_QUESTIONS:
-        user_answer = message.text
 
+        user_answer = message.text
         if user_answer == user["correct_answer_question"]:
             bot.send_message(user_id, f"Правильный ответ!")
             user["statistic"]["correct_answers"] += 1
@@ -154,16 +157,20 @@ def handle_message(message):
             bot.send_message(user_id, f"Увы, ответ не верный!")
             user["statistic"]["total_tests"] += 1
             
-        
+      
         # логика задавания следующего вопроса или окончания серии 
-        next_question(user, user_id)
+        next_question(user, user_id, bot)        
         question = get_seria_question(user)
         if question:
             bot.send_message(user_id, question)
         else:
             bot.send_message(user_id, f"Вопроы в серии закончились")
             user['state'] = STATE_START
-def next_question(user, user_id):
+        #выводится слишком много задяч чем положено 
+def next_question(user, user_id, bot):
     user['seria_of_questions'].pop(0)
     update_user(user_id=user_id, new_data=user)
+    num_of_current_question = len(user['seria_of_questions'])-1
+    total = user["number_of_tests"]
+    bot.send_message(user_id, f'Задач - {total-num_of_current_question}/{total}')
 bot.infinity_polling()

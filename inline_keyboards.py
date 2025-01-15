@@ -14,3 +14,11 @@ def get_markup_test_menu():
     markup.add(InlineKeyboardButton("Случайный", callback_data="cb_random"),
               InlineKeyboardButton("Серия", callback_data="cb_series"))
     return markup
+
+def get_markup_settings_menu():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    markup.add(InlineKeyboardButton("Количество вопросов в серии", callback_data="cb_number_of_tests"),
+              InlineKeyboardButton("Назад", callback_data="cb_back"))
+    return markup
+

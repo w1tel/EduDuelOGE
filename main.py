@@ -97,8 +97,9 @@ def callback_query(call):
         user['seria_of_questions'].extend(questions)
         update_user(user_id, user)
         #нужно выводить колличество вопросов в серии
-        bot.send_message(call.message.chat.id, f'Задача - 1/{number_of_tests}')
-        bot.send_message(call.message.chat.id, get_seria_question(user))
+        # bot.send_message(call.message.chat.id, f'Задача - 1/{number_of_tests}')
+        # bot.send_message(call.message.chat.id, get_seria_question(user))
+        ask_next_question(user=user, user_id=user_id, is_first=True)
     elif call.data == "cb_random":
         bot.answer_callback_query(call.id)
         random_question = get_random_task()
@@ -147,30 +148,76 @@ def handle_message(message):
         user["correct_answer_question"] = None
         update_user(user_id, user)
     elif current_state == STATE_SERIA_QUESTIONS:
-
-        user_answer = message.text
-        if user_answer == user["correct_answer_question"]:
-            bot.send_message(user_id, f"Правильный ответ!")
-            user["statistic"]["correct_answers"] += 1
-            user["statistic"]["total_tests"] += 1
-        else:
-            bot.send_message(user_id, f"Увы, ответ не верный!")
-            user["statistic"]["total_tests"] += 1
-            
-      
-        # логика задавания следующего вопроса или окончания серии 
-        next_question(user, user_id, bot)        
-        question = get_seria_question(user)
-        if question:
-            bot.send_message(user_id, question)
-        else:
-            bot.send_message(user_id, f"Вопроы в серии закончились")
-            user['state'] = STATE_START
+        handle_series_answer(user=user, user_id=user_id, user_answer=message.text)
+        
         #выводится слишком много задяч чем положено 
-def next_question(user, user_id, bot):
-    user['seria_of_questions'].pop(0)
-    update_user(user_id=user_id, new_data=user)
-    num_of_current_question = len(user['seria_of_questions'])-1
+
+def ask_next_question(user: dict, user_id: int, is_first: bool):
+    """
+    Задаёт пользователю следующий вопрос из серии.
+
+    Параметры:
+    - is_first: True, если это вызов для самого первого вопроса 
+      (тогда выводим "Задача - 1/number_of_tests" без pop(0), 
+       ибо вопросов еще не удаляли)
+    - если is_first=False, значит мы уже ответили на предыдущий 
+      и удалили его из списка, значит нужно вывести 
+      "Задача - current_num/number_of_tests" и т.п.
+
+    Логика:
+      1. Если это не первый вопрос, удаляем уже использованный (pop(0)).
+      2. Если остались вопросы, берём первый из оставшихся,
+         вычисляем текущий порядковый номер и отправляем.
+      3. Если вопросов больше нет, завершаем серию.
+    """
     total = user["number_of_tests"]
-    bot.send_message(user_id, f'Задач - {total-num_of_current_question}/{total}')
+
+    # Шаг 1. Если это не первый вопрос, удаляем предыдущий (уже отвеченный).
+    if not is_first and user["seria_of_questions"]:
+        user["seria_of_questions"].pop(0)
+
+    update_user(user_id, user)  # Сохраняем изменения
+
+    # Шаг 2. Проверяем, остались ли ещё вопросы
+    if user["seria_of_questions"]:
+        # Сколько осталось вопросов
+        left = len(user["seria_of_questions"])
+        # Текущий индекс = total - left + 1
+        current_num = total - left + 1
+
+        bot.send_message(user_id, f"Задача - {current_num}/{total}")
+
+        # Берем первый вопрос из массива
+        question = user["seria_of_questions"][0]
+        user["correct_answer_question"] = question["correct_answer"]
+        update_user(user_id, user)
+
+        # Отправляем текст вопроса
+        bot.send_message(user_id, question["text"])
+    else:
+        # Шаг 3. Если вопросов нет, серия закончилась
+        bot.send_message(user_id, "Вопросы в серии закончились.")
+        user["state"] = STATE_START
+        update_user(user_id, user)
+
+def handle_series_answer(user: dict, user_id: int, user_answer: str):
+    """
+    Проверяем, правильный ли ответ, обновляем статистику,
+    после чего переходим к следующему вопросу, 
+    либо заканчиваем серию (если вопросы закончились).
+    """
+    correct = (user_answer == user["correct_answer_question"])
+
+    if correct:
+        bot.send_message(user_id, "Правильный ответ!")
+        user["statistic"]["correct_answers"] += 1
+    else:
+        bot.send_message(user_id, "Увы, ответ не верный!")
+
+    user["statistic"]["total_tests"] += 1
+    user["correct_answer_question"] = None  # Сбрасываем, т.к. ответ уже дан
+
+    # Переходим к следующему вопросу (или заканчиваем)
+    ask_next_question(user, user_id, is_first=False)
+
 bot.infinity_polling()

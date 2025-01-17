@@ -1602,3 +1602,18 @@ Traceback (most recent call last):
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
 IndexError: pop from empty list
 
+2025-01-17 18:51:42,219 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-17 18:51:42,255 - __main__ - INFO - User 1845480898 is already registered
+2025-01-17 18:51:43,406 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-01-17 18:51:47,557 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-01-17 18:51:50,380 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-01-17 18:51:53,183 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-01-17 18:51:55,307 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-01-17 19:20:45,331 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-17 19:20:45,365 - __main__ - INFO - User 1845480898 is already registered
+2025-01-17 19:20:46,743 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-01-17 19:20:47,564 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-01-17 19:20:49,685 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 1 (type: <class 'str'>)
+2025-01-17 19:20:50,755 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 1 (type: <class 'str'>)
+2025-01-17 19:20:52,136 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 1 (type: <class 'str'>)
+2025-01-17 19:21:47,267 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)

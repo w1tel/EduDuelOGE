@@ -2,11 +2,11 @@
     "1845480898": {
         "username": "J_S_0_o_N",
         "statistic": {
-            "total_tests": 19,
+            "total_tests": 25,
             "correct_answers": 2
         },
         "number_of_tests": 3,
-        "state": "seria_questions",
+        "state": "main_menu",
         "correct_answer_question": null,
         "seria_of_questions": []
     }

@@ -10,7 +10,7 @@ from utils import get_user
 from utils import get_users
 from questions import get_random_tasks
 from questions import get_random_task
-from constants import HELP_COMMAND_TEXT
+from constants import HELP_COMMAND_TEXT, START_MAIN_MENU_TEXT
 
 
 logging.basicConfig(
@@ -57,7 +57,7 @@ def start_message(message):
     bot.send_message(user_id, "Привет ✌️ ")
     bot.send_message(
         user_id,
-        " Я помогу тебе с сдачей экзамена. Выбери, что ты хочешь сделать:",
+        START_MAIN_MENU_TEXT,
         reply_markup=get_markup_main_menu(),
     )
 
@@ -117,10 +117,14 @@ def callback_query(call):
         bot.send_message(call.message.chat.id, f'Твоя статистика \nПравильно решеных тестов: {user['statistic']['correct_answers']} \nВсего решено тестов: {user['statistic']['total_tests']}')
     elif call.data == "cb_setting":
         bot.answer_callback_query(call.id, "Настройки")
-        bot.send_message(call.message.chat.id, "Настройки", reply_markup=get_markup_settings_menu())
+        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text='Настройки', reply_markup=get_markup_settings_menu())
     elif call.data == "cb_number_of_tests":
         bot.answer_callback_query(call.id)
         bot.send_message(call.message.chat.id, )
+    elif call.data == 'cb_back':
+        # Обязательно вызываем answer_callback_query, чтобы убрать "часики" у пользователя
+        bot.answer_callback_query(call.id)
+        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=START_MAIN_MENU_TEXT, reply_markup=get_markup_main_menu())
 @bot.message_handler(commands=["help"])
 def help_message(message):
     bot.send_message(message.chat.id, HELP_COMMAND_TEXT, parse_mode="HTML")
@@ -219,5 +223,22 @@ def handle_series_answer(user: dict, user_id: int, user_answer: str):
 
     # Переходим к следующему вопросу (или заканчиваем)
     ask_next_question(user, user_id, is_first=False)
+
+def replace_message(chat_id, message_id, new_text, reply_markup=None):
+    """
+    Сначала удаляет старое сообщение по chat_id и message_id,
+    затем отправляет новое сообщение с указанным текстом и кнопками.
+    """
+    # Удаляем старое сообщение
+    bot.delete_message(chat_id=chat_id, message_id=message_id)
+
+    # Отправляем новое сообщение
+    sent_message = bot.send_message(
+        chat_id=chat_id,
+        text=new_text,
+        reply_markup=reply_markup
+    )
+    return sent_message
+
 
 bot.infinity_polling()

@@ -1617,3 +1617,100 @@ IndexError: pop from empty list
 2025-01-17 19:20:50,755 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 1 (type: <class 'str'>)
 2025-01-17 19:20:52,136 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 1 (type: <class 'str'>)
 2025-01-17 19:21:47,267 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-22 19:17:21,733 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-22 19:17:21,775 - __main__ - INFO - User 1845480898 is already registered
+2025-01-22 19:17:26,663 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-22 19:17:32,132 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:17:57,503 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-22 19:17:59,536 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:28:22,078 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-22 19:28:22,079 - __main__ - INFO - User 1845480898 is already registered
+2025-01-22 19:28:25,185 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:28:26,736 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:28:42,675 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_number_of_tests (type: <class 'str'>)
+2025-01-22 19:28:42,747 - TeleBot - ERROR - Infinity polling exception: TeleBot.send_message() missing 1 required positional argument: 'text'
+2025-01-22 19:28:42,749 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 123, in callback_query
+    bot.send_message(call.message.chat.id, )
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TeleBot.send_message() missing 1 required positional argument: 'text'
+
+2025-01-22 19:28:46,319 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:28:47,509 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:29:35,688 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-22 19:29:35,690 - __main__ - INFO - User 1845480898 is already registered
+2025-01-22 19:29:37,158 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:29:38,455 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:29:43,811 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:29:44,850 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:29:45,754 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:29:46,753 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:30:08,091 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-01-22 19:30:25,643 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:30:37,580 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:30:40,549 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-22 19:31:06,326 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:31:11,114 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:38:54,270 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-22 19:38:54,271 - __main__ - INFO - User 1845480898 is already registered
+2025-01-22 19:39:47,817 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-22 19:39:47,820 - __main__ - INFO - User 1845480898 is already registered
+2025-01-22 19:39:51,513 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-22 19:39:51,517 - __main__ - INFO - User 1845480898 is already registered
+2025-01-22 19:40:29,962 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-01-22 19:40:32,094 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-01-22 19:46:03,458 - __main__ - INFO - User 1821191989 sent /start command
+2025-01-22 19:46:03,460 - __main__ - INFO - Registering new user: 1821191989)
+2025-01-22 19:46:07,816 - __main__ - INFO - User 1821191989 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-01-22 19:46:10,031 - __main__ - INFO - User 1821191989 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-01-22 19:46:18,555 - __main__ - INFO - User 1821191989 (type: <class 'int'>) sent a message: 52 (type: <class 'str'>)
+2025-01-22 19:46:23,924 - __main__ - INFO - User 1821191989 (type: <class 'int'>) sent a message: ’ÛÈ (type: <class 'str'>)
+2025-01-22 19:46:26,491 - __main__ - INFO - User 1821191989 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-01-22 19:46:36,294 - __main__ - INFO - User 1821191989 (type: <class 'int'>) sent a message: “ÛÚÛÚÛ (type: <class 'str'>)
+2025-01-22 19:46:40,902 - __main__ - INFO - User 1821191989 (type: <class 'int'>) sent a message:  ‚ (type: <class 'str'>)
+2025-01-22 19:46:43,579 - __main__ - INFO - User 1821191989 (type: <class 'int'>) sent a message: ƒ‚‡ (type: <class 'str'>)
+2025-01-22 19:46:53,540 - __main__ - INFO - User 1821191989 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-22 19:53:01,052 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-22 19:53:01,056 - __main__ - INFO - User 1845480898 is already registered
+2025-01-22 19:53:03,767 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:53:04,902 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:53:28,336 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-22 19:53:28,337 - __main__ - INFO - User 1845480898 is already registered
+2025-01-22 19:53:33,707 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:53:35,437 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:55:56,694 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-22 19:55:56,697 - __main__ - INFO - User 1845480898 is already registered
+2025-01-22 19:55:58,541 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-22 19:56:06,293 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-22 19:56:18,113 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-01-22 19:56:25,516 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-01-22 19:56:28,555 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-01-22 19:56:35,649 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-01-22 19:56:38,586 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: `12 (type: <class 'str'>)
+2025-01-22 19:56:41,012 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: `1 (type: <class 'str'>)
+2025-01-22 19:56:43,667 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)

@@ -2,8 +2,19 @@
     "1845480898": {
         "username": "J_S_0_o_N",
         "statistic": {
-            "total_tests": 25,
-            "correct_answers": 2
+            "total_tests": 4,
+            "correct_answers": 1
+        },
+        "number_of_tests": 3,
+        "state": "main_menu",
+        "correct_answer_question": null,
+        "seria_of_questions": []
+    },
+    "1821191989": {
+        "username": "tooloudly",
+        "statistic": {
+            "total_tests": 4,
+            "correct_answers": 0
         },
         "number_of_tests": 3,
         "state": "main_menu",

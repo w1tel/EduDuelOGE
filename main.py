@@ -25,7 +25,8 @@ TOKEN = os.getenv("TOKEN")
 
 bot = telebot.TeleBot(TOKEN)
 
-
+MAX_OF_TESTS = 5
+STATE_NUM_OF_TESTS = 'waitting_num_of_tests'
 STATE_START = "main_menu"
 STATE_WAITING_ANSWER = 'waitting_answer'
 STATE_SERIA_QUESTIONS = 'seria_questions'
@@ -54,7 +55,7 @@ def start_message(message):
         bot.send_message(user_id, "Ты уже есть в базе данных")
 
     # TODO Удалять сообщения после отправки через какое-то время
-    bot.send_message(user_id, "Привет ✌️ ")
+    bot.send_message(user_id, "Привет ✌️ \nЯ помогу тебе с сдачей экзамена.  ")
     bot.send_message(
         user_id,
         START_MAIN_MENU_TEXT,
@@ -73,6 +74,7 @@ def get_seria_question(user):
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
     user_id = call.from_user.id
+    user = get_user(user_id)
     callback_data_type = type(call.data)
     logger.info(
         f"User {user_id} (type: {type(user_id)}) selected callback data: {call.data} (type: {callback_data_type})"
@@ -84,7 +86,7 @@ def callback_query(call):
             call.message.chat.id, "Пройти тест", reply_markup=get_markup_test_menu()
         )
     elif call.data == "cb_series":
-        user = get_user(user_id)
+        
         
         number_of_tests = user["number_of_tests"]
         
@@ -105,14 +107,11 @@ def callback_query(call):
         random_question = get_random_task()
     
         bot.send_message(call.message.chat.id, random_question["text"])
-        user_id = call.from_user.id
-        user = get_user(user_id)
         user["state"] = STATE_WAITING_ANSWER
         user["correct_answer_question"] = random_question["correct_answer"]
 
         update_user(user_id, user)
     elif call.data == "cb_stats":
-        user = get_user(user_id)
         bot.answer_callback_query(call.id, "Мой рейтинг")
         bot.send_message(call.message.chat.id, f'Твоя статистика \nПравильно решеных тестов: {user['statistic']['correct_answers']} \nВсего решено тестов: {user['statistic']['total_tests']}')
     elif call.data == "cb_setting":
@@ -120,7 +119,9 @@ def callback_query(call):
         replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text='Настройки', reply_markup=get_markup_settings_menu())
     elif call.data == "cb_number_of_tests":
         bot.answer_callback_query(call.id)
-        bot.send_message(call.message.chat.id, )
+        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=f"Сейчас выбранно {user['number_of_tests']} вопроса серии\nНапиши, сколько вопросов ты бы хотел получать в 'Серии'")
+        user['state'] = STATE_NUM_OF_TESTS
+        update_user(user_id, user)
     elif call.data == 'cb_back':
         # Обязательно вызываем answer_callback_query, чтобы убрать "часики" у пользователя
         bot.answer_callback_query(call.id)
@@ -139,6 +140,7 @@ def handle_message(message):
     )
     user = get_user(user_id)
     current_state = user["state"]
+    print(current_state)
     if current_state == STATE_WAITING_ANSWER:
         user_answer = message.text
         if user_answer == user["correct_answer_question"]:
@@ -153,8 +155,19 @@ def handle_message(message):
         update_user(user_id, user)
     elif current_state == STATE_SERIA_QUESTIONS:
         handle_series_answer(user=user, user_id=user_id, user_answer=message.text)
-        
-        #выводится слишком много задяч чем положено 
+    elif current_state == STATE_NUM_OF_TESTS:
+        print(user_message)
+        if user_message.isdigit():
+            if int(user_message) <= MAX_OF_TESTS:
+                user['number_of_tests'] = int(user_message)
+                update_user(user_id, user)
+                bot.reply_to(message, 'Окей, уже установил😎')
+                user['state'] = STATE_START
+                bot.send_message(chat_id=message.chat.id, text=START_MAIN_MENU_TEXT, reply_markup=get_markup_main_menu())
+            else:
+                bot.reply_to(message, 'Укажите меньшее количество впросов')
+        else:
+            bot.reply_to(message, 'Введите только число')
 
 def ask_next_question(user: dict, user_id: int, is_first: bool):
     """

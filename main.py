@@ -11,7 +11,8 @@ from utils import get_users
 from questions import get_random_tasks
 from questions import get_random_task
 from constants import HELP_COMMAND_TEXT, START_MAIN_MENU_TEXT
-
+from constants import RATING_TEXT_TEMPLATE
+from utils import get_user_rank
 
 logging.basicConfig(
     level=logging.INFO,
@@ -42,11 +43,12 @@ def start_message(message):
         bot.send_message(user_id, "Мы тебя зарегистрировали👌")
         user_data = {
             "username": message.from_user.username,
-            "statistic": {"total_tests": 0, "correct_answers": 0},
+            "statistic": {"total_tests": 0, "correct_answers": 0, "success_rate": 0},
             "number_of_tests": 3,
             "state": STATE_START,
             "correct_answer_question": None,
             "seria_of_questions": [],
+        
         }
 
         register_user(user_id, user_data)
@@ -113,13 +115,13 @@ def callback_query(call):
         update_user(user_id, user)
     elif call.data == "cb_stats":
         bot.answer_callback_query(call.id, "Мой рейтинг")
-        bot.send_message(call.message.chat.id, f'Твоя статистика \nПравильно решеных тестов: {user['statistic']['correct_answers']} \nВсего решено тестов: {user['statistic']['total_tests']}')
+        bot.send_message(call.message.chat.id, get_raiting_text(user_id), parse_mode='HTML')
     elif call.data == "cb_setting":
         bot.answer_callback_query(call.id, "Настройки")
         replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text='Настройки', reply_markup=get_markup_settings_menu())
     elif call.data == "cb_number_of_tests":
         bot.answer_callback_query(call.id)
-        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=f"Сейчас выбранно {user['number_of_tests']} вопроса серии\nНапиши, сколько вопросов ты бы хотел получать в 'Серии'")
+        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=f"Сейчас выбранно {user['number_of_tests']} вопрос(-а) серии\nНапиши, сколько вопросов ты бы хотел получать в 'Серии'")
         user['state'] = STATE_NUM_OF_TESTS
         update_user(user_id, user)
     elif call.data == 'cb_back':
@@ -152,6 +154,7 @@ def handle_message(message):
             user["statistic"]["total_tests"] += 1
             user["state"] = STATE_START
         user["correct_answer_question"] = None
+        user["statistic"]["success_rate"] = user["statistic"]["correct_answers"] // user["statistic"]["total_tests"] * 100 
         update_user(user_id, user)
     elif current_state == STATE_SERIA_QUESTIONS:
         handle_series_answer(user=user, user_id=user_id, user_answer=message.text)
@@ -233,7 +236,7 @@ def handle_series_answer(user: dict, user_id: int, user_answer: str):
 
     user["statistic"]["total_tests"] += 1
     user["correct_answer_question"] = None  # Сбрасываем, т.к. ответ уже дан
-
+    user["statistic"]["success_rate"] = user["statistic"]["correct_answers"] // user["statistic"]["total_tests"] * 100 
     # Переходим к следующему вопросу (или заканчиваем)
     ask_next_question(user, user_id, is_first=False)
 
@@ -253,5 +256,15 @@ def replace_message(chat_id, message_id, new_text, reply_markup=None):
     )
     return sent_message
 
+def get_raiting_text(user_id):
+    user = get_user(user_id)
+    users = get_users()
+    total_tests = user["statistic"]["total_tests"]
+    correct_tests = user["statistic"]["correct_answers"]
+    ranking_position = get_user_rank
+    total_users = len(get_users())
+    percentage = (correct_tests / total_tests * 100) if total_tests > 0 else 0
+
+    return RATING_TEXT_TEMPLATE.format(ranking_position, total_users, correct_tests, total_tests, round(percentage, 2))
 
 bot.infinity_polling()

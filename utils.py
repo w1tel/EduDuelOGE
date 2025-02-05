@@ -8,7 +8,7 @@ from typing import TypedDict, Dict, Optional
 class Statistic(TypedDict):
     total_tests: int
     correct_answers: int
-
+    success_rate: int
 
 class User(TypedDict):
     username: str
@@ -120,3 +120,18 @@ def convert_keys_to_numbers(users):
     return converted_users
 
 # ========== Функции для работы с пользователями ========== КОНЕЦ
+
+def get_user_rank(users: Users, user_id: int):
+    users_rating = []
+    for key, value in users.items():
+        users_rating.append([key, value['statistic']['success_rate']])
+    users_rating
+    # нужно отсортировать
+
+    # потом из отсортированного списка нужно вернуть индекс того пользователя который мы ищем 
+    # индекс это метстро в рейтинге
+
+
+    return
+        
+get_user_rank(get_users(), 1)

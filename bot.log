@@ -1929,3 +1929,75 @@ TypeError: TeleBot.send_message() got an unexpected keyword argument 'new_text'
 2025-01-24 19:05:08,255 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
 2025-01-24 19:05:11,853 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_number_of_tests (type: <class 'str'>)
 2025-01-24 19:05:15,064 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 1 (type: <class 'str'>)
+2025-01-28 19:09:38,325 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-28 19:09:38,333 - __main__ - INFO - User 1845480898 is already registered
+2025-01-28 19:09:41,291 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-28 19:09:44,630 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_number_of_tests (type: <class 'str'>)
+2025-01-28 19:10:37,891 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-28 19:10:37,893 - __main__ - INFO - User 1845480898 is already registered
+2025-01-28 19:10:39,926 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-28 19:10:42,585 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_number_of_tests (type: <class 'str'>)
+2025-01-28 19:10:57,270 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-28 19:10:57,275 - __main__ - INFO - User 1845480898 is already registered
+2025-01-28 19:11:02,676 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-28 19:11:04,957 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_number_of_tests (type: <class 'str'>)
+2025-01-28 19:11:08,424 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 2 (type: <class 'str'>)
+2025-01-28 19:11:11,984 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-29 16:08:57,822 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-29 16:08:57,829 - __main__ - INFO - User 1845480898 is already registered
+2025-01-29 16:08:59,153 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-29 16:09:01,086 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_number_of_tests (type: <class 'str'>)
+2025-01-29 16:09:08,937 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 4 (type: <class 'str'>)
+2025-01-29 16:09:17,196 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-01-29 16:09:18,395 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-01-29 16:11:57,677 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-29 16:15:09,535 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-29 16:33:37,699 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-29 16:33:37,700 - __main__ - INFO - User 1845480898 is already registered
+2025-01-29 16:33:39,021 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-29 16:35:17,693 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-29 16:35:17,694 - __main__ - INFO - User 1845480898 is already registered
+2025-01-29 16:35:18,857 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-29 16:37:45,813 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-29 16:37:45,815 - __main__ - INFO - User 1845480898 is already registered
+2025-01-29 16:37:47,977 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-31 18:46:58,104 - __main__ - INFO - User 1845480898 sent /start command
+2025-01-31 18:46:58,105 - __main__ - INFO - User 1845480898 is already registered
+2025-01-31 18:47:00,666 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-01-31 18:47:00,723 - TeleBot - ERROR - Infinity polling exception: string indices must be integers, not 'str'
+2025-01-31 18:47:00,724 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 117, in callback_query
+    bot.send_message(call.message.chat.id, get_raiting_text(user_id), parse_mode='HTML')
+                                           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 261, in get_raiting_text
+    ranking_position = get_user_rank(user, user_id, user_id_to_check=user_id )
+  File "c:\Users\aleks\-EduDuelOGE\utils.py", line 159, in get_user_rank
+    total_tests = user_data["statistic"]["total_tests"]
+                  ~~~~~~~~~^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+

@@ -239,7 +239,7 @@ def handle_series_answer(user: dict, user_id: int, user_answer: str):
 
     user["statistic"]["total_tests"] += 1
     user["correct_answer_question"] = None  # Сбрасываем, т.к. ответ уже дан
-    user["statistic"]["success_rate"] = user["statistic"]["correct_answers"] // user["statistic"]["total_tests"] * 100 
+    user["statistic"]["success_rate"] = int(user["statistic"]["correct_answers"] / user["statistic"]["total_tests"] * 100) 
     # Переходим к следующему вопросу (или заканчиваем)
     ask_next_question(user, user_id, is_first=False)
 

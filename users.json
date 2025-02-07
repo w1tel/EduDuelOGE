@@ -2,9 +2,9 @@
     "1845480898": {
         "username": "J_S_0_o_N",
         "statistic": {
-            "total_tests": 6,
-            "correct_answers": 3,
-            "success_rate": 0
+            "total_tests": 9,
+            "correct_answers": 4,
+            "success_rate": 44
         },
         "number_of_tests": 3,
         "state": "main_menu",

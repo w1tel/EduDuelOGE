@@ -2,7 +2,7 @@ import telebot
 import logging
 from dotenv import load_dotenv
 import os
-from inline_keyboards import get_markup_main_menu, get_markup_test_menu, get_markup_settings_menu
+from inline_keyboards import get_markup_main_menu, get_markup_test_menu, get_markup_settings_menu, get_markup_back_button
 from utils import register_user
 from utils import is_registered
 from utils import update_user
@@ -84,9 +84,8 @@ def callback_query(call):
 
     if call.data == "cb_test":
         bot.answer_callback_query(call.id)
-        bot.send_message(
-            call.message.chat.id, "Пройти тест", reply_markup=get_markup_test_menu()
-        )
+        
+        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text='Пройти тест', reply_markup=get_markup_test_menu())
     elif call.data == "cb_series":
         
         
@@ -115,7 +114,7 @@ def callback_query(call):
         update_user(user_id, user)
     elif call.data == "cb_stats":
         bot.answer_callback_query(call.id, "Мой рейтинг")
-        bot.send_message(call.message.chat.id, get_raiting_text(user_id), parse_mode='HTML')
+        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=get_raiting_text(user_id), reply_markup=get_markup_back_button())
     elif call.data == "cb_setting":
         bot.answer_callback_query(call.id, "Настройки")
         replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text='Настройки', reply_markup=get_markup_settings_menu())
@@ -154,8 +153,12 @@ def handle_message(message):
             user["statistic"]["total_tests"] += 1
             user["state"] = STATE_START
         user["correct_answer_question"] = None
-        user["statistic"]["success_rate"] = user["statistic"]["correct_answers"] // user["statistic"]["total_tests"] * 100 
+        user["statistic"]["success_rate"] = int((user["statistic"]['correct_answers'] / user["statistic"]['total_tests']) * 100 )
+        print(user["statistic"]["success_rate"])
+        print(user["statistic"]["correct_answers"])
+        print(user["statistic"]["total_tests"])
         update_user(user_id, user)
+        bot.send_message(chat_id=message.chat.id, text=START_MAIN_MENU_TEXT, reply_markup=get_markup_main_menu())
     elif current_state == STATE_SERIA_QUESTIONS:
         handle_series_answer(user=user, user_id=user_id, user_answer=message.text)
     elif current_state == STATE_NUM_OF_TESTS:
@@ -219,7 +222,7 @@ def ask_next_question(user: dict, user_id: int, is_first: bool):
         bot.send_message(user_id, "Вопросы в серии закончились.")
         user["state"] = STATE_START
         update_user(user_id, user)
-
+        bot.send_message(chat_id=user_id, text=START_MAIN_MENU_TEXT, reply_markup=get_markup_main_menu())
 def handle_series_answer(user: dict, user_id: int, user_answer: str):
     """
     Проверяем, правильный ли ответ, обновляем статистику,
@@ -240,7 +243,7 @@ def handle_series_answer(user: dict, user_id: int, user_answer: str):
     # Переходим к следующему вопросу (или заканчиваем)
     ask_next_question(user, user_id, is_first=False)
 
-def replace_message(chat_id, message_id, new_text, reply_markup=None):
+def replace_message(chat_id, message_id, new_text, reply_markup=None, parse_mode = 'HTML'):
     """
     Сначала удаляет старое сообщение по chat_id и message_id,
     затем отправляет новое сообщение с указанным текстом и кнопками.
@@ -252,7 +255,8 @@ def replace_message(chat_id, message_id, new_text, reply_markup=None):
     sent_message = bot.send_message(
         chat_id=chat_id,
         text=new_text,
-        reply_markup=reply_markup
+        reply_markup=reply_markup,
+        parse_mode=parse_mode
     )
     return sent_message
 
@@ -261,7 +265,7 @@ def get_raiting_text(user_id):
     users = get_users()
     total_tests = user["statistic"]["total_tests"]
     correct_tests = user["statistic"]["correct_answers"]
-    ranking_position = get_user_rank
+    ranking_position = get_user_rank(users, user_id)
     total_users = len(get_users())
     percentage = (correct_tests / total_tests * 100) if total_tests > 0 else 0
 

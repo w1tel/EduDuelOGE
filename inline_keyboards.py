@@ -10,9 +10,17 @@ def get_markup_main_menu():
 
 def get_markup_test_menu():
     markup = InlineKeyboardMarkup()
-    markup.row_width = 2
+    markup.row_width = 3
     markup.add(InlineKeyboardButton("Случайный", callback_data="cb_random"),
-              InlineKeyboardButton("Серия", callback_data="cb_series"))
+              InlineKeyboardButton("Серия", callback_data="cb_series"),
+              InlineKeyboardButton("Назад", callback_data="cb_back"))
+    
+    return markup
+def get_markup_back_button():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    markup.add(InlineKeyboardButton("Назад", callback_data="cb_back"))
+
     return markup
 
 def get_markup_settings_menu():

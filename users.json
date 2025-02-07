@@ -3,18 +3,20 @@
         "username": "J_S_0_o_N",
         "statistic": {
             "total_tests": 6,
-            "correct_answers": 2
+            "correct_answers": 3,
+            "success_rate": 0
         },
-        "number_of_tests": 4,
-        "state": "waitting_num_of_tests",
+        "number_of_tests": 3,
+        "state": "main_menu",
         "correct_answer_question": null,
         "seria_of_questions": []
     },
-    "1821191989": {
-        "username": "tooloudly",
+    "180616110": {
+        "username": "mosqitu",
         "statistic": {
-            "total_tests": 4,
-            "correct_answers": 0
+            "total_tests": 3,
+            "correct_answers": 0,
+            "success_rate": 0
         },
         "number_of_tests": 3,
         "state": "main_menu",

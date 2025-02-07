@@ -2001,3 +2001,1138 @@ Traceback (most recent call last):
                   ~~~~~~~~~^^^^^^^^^^^^^
 TypeError: string indices must be integers, not 'str'
 
+2025-02-05 19:55:52,021 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-05 19:55:52,028 - __main__ - INFO - User 1845480898 is already registered
+2025-02-05 19:55:53,656 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-05 19:55:53,751 - TeleBot - ERROR - Infinity polling exception: 'success_rate'
+2025-02-05 19:55:53,752 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 118, in callback_query
+    bot.send_message(call.message.chat.id, get_raiting_text(user_id), parse_mode='HTML')
+                                           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 264, in get_raiting_text
+    ranking_position = get_user_rank(users, user_id)
+  File "c:\Users\aleks\-EduDuelOGE\utils.py", line 127, in get_user_rank
+    users_rating.append([key, value['statistic']['success_rate']])
+                              ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'success_rate'
+
+2025-02-05 19:56:40,190 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-05 19:56:40,190 - __main__ - INFO - Registering new user: 1845480898)
+2025-02-05 19:56:43,261 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-05 19:56:53,121 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-05 19:56:55,488 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-05 19:56:57,809 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 19:57:00,103 - __main__ - INFO - User 180616110 sent /start command
+2025-02-05 19:57:00,105 - __main__ - INFO - Registering new user: 180616110)
+2025-02-05 19:57:01,906 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-05 19:57:02,937 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-05 19:57:04,057 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-05 19:57:04,523 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 19:57:05,905 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 14 (type: <class 'str'>)
+2025-02-05 19:57:06,050 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 19:57:08,951 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-05 19:57:10,927 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 23 (type: <class 'str'>)
+2025-02-05 19:57:11,516 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 19:57:13,525 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-05 19:57:15,432 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-05 19:57:44,797 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-05 19:57:53,771 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 5 (type: <class 'str'>)
+2025-02-05 19:58:02,716 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 16 (type: <class 'str'>)
+2025-02-05 19:58:10,409 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 19:58:14,344 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-05 19:58:20,690 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-05 19:58:20,691 - __main__ - INFO - User 1845480898 is already registered
+2025-02-05 19:58:22,006 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-05 20:01:00,879 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-05 20:04:48,073 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:04:48,075 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:04:51,385 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:04:51,386 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:04:51,688 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:04:51,690 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:04:53,460 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-05 20:04:53,461 - __main__ - INFO - User 1845480898 is already registered
+2025-02-05 20:04:55,242 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:04:55,244 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:04:55,795 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:04:55,796 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:04:55,965 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-05 20:04:58,030 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-05 20:04:59,096 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:04:59,097 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:04:59,437 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:04:59,439 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:02,745 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:02,746 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:03,296 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:03,298 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:05,024 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 20:05:06,859 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:06,861 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:07,924 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:07,926 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:11,226 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:11,228 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:13,284 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:13,285 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:16,844 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:16,846 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:20,900 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:20,905 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:24,966 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:24,967 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:33,026 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:33,027 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:34,129 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-05 20:05:37,311 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 20:05:38,081 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:38,082 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:38,400 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:38,401 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:38,504 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 20:05:39,557 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 20:05:41,701 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:41,702 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:42,009 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:42,011 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:45,315 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:45,317 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:45,874 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:45,876 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:49,434 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:49,438 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:05:50,504 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-02-05 20:05:50,506 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+                               allowed_updates=allowed_updates,
+                               timeout=timeout, long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+        self.token, offset=offset, limit=limit, timeout=timeout, allowed_updates=allowed_updates,
+        long_polling_timeout=long_polling_timeout)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 330, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2025-02-05 20:06:01,483 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-05 20:06:01,493 - __main__ - INFO - User 1845480898 is already registered
+2025-02-05 20:06:04,110 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-05 20:06:06,518 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-05 20:06:10,531 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 20:06:16,712 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 20:06:22,331 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 20:06:46,948 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-05 20:06:46,953 - __main__ - INFO - User 1845480898 is already registered
+2025-02-05 20:06:48,051 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-05 20:06:48,784 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-05 20:06:53,858 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-05 20:07:21,932 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-05 20:07:21,938 - __main__ - INFO - Registering new user: 1845480898)
+2025-02-05 20:07:24,544 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-05 20:07:25,522 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-05 20:07:42,038 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 5 (type: <class 'str'>)
+2025-02-05 20:07:52,166 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:07:17,250 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 18:07:17,252 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 18:07:18,388 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:07:59,117 - __main__ - INFO - User 180616110 sent /start command
+2025-02-07 18:07:59,117 - __main__ - INFO - User 180616110 is already registered
+2025-02-07 18:08:04,511 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:08:06,250 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 18:08:24,660 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 4 (type: <class 'str'>)
+2025-02-07 18:08:27,493 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-07 18:08:31,899 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 14 (type: <class 'str'>)
+2025-02-07 18:08:33,738 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 23 (type: <class 'str'>)
+2025-02-07 18:08:35,439 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 44 (type: <class 'str'>)
+2025-02-07 18:08:56,266 - __main__ - INFO - User 180616110 sent /start command
+2025-02-07 18:08:56,267 - __main__ - INFO - User 180616110 is already registered
+2025-02-07 18:09:02,800 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:18:47,170 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 18:18:47,171 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 18:18:48,859 - __main__ - INFO - User 180616110 sent /start command
+2025-02-07 18:18:48,861 - __main__ - INFO - User 180616110 is already registered
+2025-02-07 18:18:50,454 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:18:51,023 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:20:06,276 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 18:20:13,263 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 18:20:13,272 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 18:20:15,807 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:21:56,152 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 18:21:56,153 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 18:21:59,487 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:22:03,004 - __main__ - INFO - User 180616110 sent /start command
+2025-02-07 18:22:03,005 - __main__ - INFO - User 180616110 is already registered
+2025-02-07 18:22:03,529 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:22:04,457 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:22:06,154 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:22:06,201 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:22:08,276 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:22:09,357 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:22:10,168 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:22:14,352 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:22:27,105 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:22:28,538 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:22:29,815 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:22:31,408 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:22:33,351 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:22:35,019 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:22:50,715 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:22:53,842 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:22:57,482 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 18:23:00,500 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:23:01,161 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 33 (type: <class 'str'>)
+2025-02-07 18:23:08,932 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:23:13,388 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:23:26,993 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:32:35,384 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 18:32:35,386 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 18:32:35,568 - __main__ - INFO - User 180616110 sent /start command
+2025-02-07 18:32:35,569 - __main__ - INFO - User 180616110 is already registered
+2025-02-07 18:32:37,690 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:32:37,876 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:32:44,184 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:32:45,839 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:32:48,517 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:33:30,571 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 18:33:30,574 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 18:33:32,148 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:33:33,697 - __main__ - INFO - User 180616110 sent /start command
+2025-02-07 18:33:33,698 - __main__ - INFO - User 180616110 is already registered
+2025-02-07 18:33:33,813 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:33:35,159 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:33:37,544 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:33:40,479 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:33:41,934 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:33:47,516 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:33:48,362 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:33:57,235 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:33:58,323 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:34:04,140 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:34:05,602 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:34:07,067 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:34:08,146 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:34:10,361 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:34:11,270 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:36:27,059 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 18:36:27,060 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 18:36:28,203 - __main__ - INFO - User 180616110 sent /start command
+2025-02-07 18:36:28,206 - __main__ - INFO - User 180616110 is already registered
+2025-02-07 18:36:29,589 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:36:29,753 - TeleBot - ERROR - Infinity polling exception: replace_message() got an unexpected keyword argument 'parse_mode'
+2025-02-07 18:36:29,755 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 117, in callback_query
+    replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=get_raiting_text(user_id), reply_markup=get_markup_back_button(), parse_mode='HTML')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: replace_message() got an unexpected keyword argument 'parse_mode'
+
+2025-02-07 18:36:30,071 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:36:32,765 - TeleBot - ERROR - Infinity polling exception: replace_message() got an unexpected keyword argument 'parse_mode'
+2025-02-07 18:36:32,768 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 117, in callback_query
+    replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=get_raiting_text(user_id), reply_markup=get_markup_back_button(), parse_mode='HTML')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: replace_message() got an unexpected keyword argument 'parse_mode'
+
+2025-02-07 18:36:32,916 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:36:35,776 - TeleBot - ERROR - Infinity polling exception: replace_message() got an unexpected keyword argument 'parse_mode'
+2025-02-07 18:36:35,778 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 117, in callback_query
+    replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=get_raiting_text(user_id), reply_markup=get_markup_back_button(), parse_mode='HTML')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: replace_message() got an unexpected keyword argument 'parse_mode'
+
+2025-02-07 18:38:34,129 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:38:36,584 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:38:36,636 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:38:38,136 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:38:39,076 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:38:40,328 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:38:41,377 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:38:43,830 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 18:38:43,979 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:38:47,326 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 18:38:50,320 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:38:53,358 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:38:57,123 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:39:01,120 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-07 18:39:01,957 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:39:03,342 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-07 18:39:06,000 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:39:07,653 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:39:08,914 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:39:09,968 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 3 (type: <class 'str'>)
+2025-02-07 18:39:11,493 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 4 (type: <class 'str'>)
+2025-02-07 18:39:11,951 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:39:25,713 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:39:33,760 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:40:01,026 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:41:01,722 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:41:05,231 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:42:23,184 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:43:01,131 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 18:43:01,133 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 18:43:05,782 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-02-07 18:43:11,389 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_number_of_tests (type: <class 'str'>)
+2025-02-07 18:43:23,994 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 10 (type: <class 'str'>)
+2025-02-07 18:43:34,601 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 5 (type: <class 'str'>)
+2025-02-07 18:43:45,883 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-02-07 18:43:49,820 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_number_of_tests (type: <class 'str'>)
+2025-02-07 18:44:28,300 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 18:44:28,302 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 18:44:51,947 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:45:54,284 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:45:59,406 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-02-07 18:46:02,594 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_number_of_tests (type: <class 'str'>)
+2025-02-07 18:47:35,199 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 1488 (type: <class 'str'>)
+2025-02-07 18:48:06,570 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: Окей (type: <class 'str'>)
+2025-02-07 18:48:09,092 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:48:11,048 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 5 (type: <class 'str'>)
+2025-02-07 18:48:15,194 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_setting (type: <class 'str'>)
+2025-02-07 18:48:33,331 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:53:57,146 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:53:59,050 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 18:56:03,889 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:56:09,527 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:56:10,952 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:56:13,921 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:56:15,563 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-07 18:56:24,693 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:56:25,788 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:56:26,632 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 18:56:27,429 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 1 (type: <class 'str'>)
+2025-02-07 18:56:29,984 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 21 (type: <class 'str'>)
+2025-02-07 18:56:30,212 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 18:59:20,681 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 18:59:35,878 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:59:37,266 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 18:59:38,960 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 33 (type: <class 'str'>)
+2025-02-07 18:59:41,096 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 18:59:42,298 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 18:59:57,269 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 8 (type: <class 'str'>)
+2025-02-07 19:03:19,521 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 19:03:19,749 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 19:03:19,751 - __main__ - INFO - User 1845480898 is already registered
+2025-02-07 19:03:21,124 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 19:03:21,509 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 19:03:22,665 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 19:03:24,370 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 19:03:25,944 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 19:03:55,276 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 8 (type: <class 'str'>)
+2025-02-07 19:03:57,428 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 19:04:05,641 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 19:04:06,687 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 19:04:47,328 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 19:09:05,692 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 19:09:10,439 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 19:09:37,136 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 19:09:41,024 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 19:09:43,934 - __main__ - INFO - User 1845480898 sent /start command
+2025-02-07 19:09:43,936 - __main__ - INFO - Registering new user: 1845480898)
+2025-02-07 19:09:45,042 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 19:09:45,290 - TeleBot - ERROR - Infinity polling exception: 'bool' object does not support item assignment
+2025-02-07 19:09:45,292 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 111, in callback_query
+    user["state"] = STATE_WAITING_ANSWER
+    ~~~~^^^^^^^^^
+TypeError: 'bool' object does not support item assignment
+
+2025-02-07 19:09:46,433 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 19:09:48,442 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 222 (type: <class 'str'>)
+2025-02-07 19:09:48,444 - TeleBot - ERROR - Infinity polling exception: 'bool' object is not subscriptable
+2025-02-07 19:09:48,446 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 logger_level=logger_level, allowed_updates=allowed_updates, restart_on_change=False,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1198, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            logger_level=logger_level, allowed_updates=allowed_updates)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1273, in __threaded_polling
+    raise e
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 1235, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\aleks\-EduDuelOGE\.venv\Lib\site-packages\telebot\__init__.py", line 8945, in _run_middlewares_and_handler
+    result = handler['function'](message)
+  File "c:\Users\aleks\-EduDuelOGE\main.py", line 143, in handle_message
+    current_state = user["state"]
+                    ~~~~^^^^^^^^^
+TypeError: 'bool' object is not subscriptable
+
+2025-02-07 19:09:51,859 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-07 19:10:03,088 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 19:10:06,279 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 19:10:08,748 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 12 (type: <class 'str'>)
+2025-02-07 19:10:11,251 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 19:10:25,576 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 19:10:29,653 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 19:10:34,199 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_series (type: <class 'str'>)
+2025-02-07 19:10:43,519 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 5 (type: <class 'str'>)
+2025-02-07 19:10:54,066 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 16 (type: <class 'str'>)
+2025-02-07 19:10:59,110 - __main__ - INFO - User 1845480898 (type: <class 'int'>) sent a message: 8 (type: <class 'str'>)
+2025-02-07 19:11:01,645 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 19:12:24,478 - __main__ - INFO - User 180616110 sent /start command
+2025-02-07 19:12:24,479 - __main__ - INFO - Registering new user: 180616110)
+2025-02-07 19:12:26,471 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 19:12:27,570 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 19:12:29,194 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 21 (type: <class 'str'>)
+2025-02-07 19:12:31,242 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 19:12:32,252 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 19:12:34,409 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 21 (type: <class 'str'>)
+2025-02-07 19:12:35,995 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_test (type: <class 'str'>)
+2025-02-07 19:12:38,576 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_random (type: <class 'str'>)
+2025-02-07 19:12:42,042 - __main__ - INFO - User 180616110 (type: <class 'int'>) sent a message: 8 (type: <class 'str'>)
+2025-02-07 19:12:43,869 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)
+2025-02-07 19:12:53,891 - __main__ - INFO - User 180616110 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 19:13:14,505 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_back (type: <class 'str'>)
+2025-02-07 19:13:15,720 - __main__ - INFO - User 1845480898 (type: <class 'int'>) selected callback data: cb_stats (type: <class 'str'>)

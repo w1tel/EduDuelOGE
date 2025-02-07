@@ -121,17 +121,19 @@ def convert_keys_to_numbers(users):
 
 # ========== Функции для работы с пользователями ========== КОНЕЦ
 
-def get_user_rank(users: Users, user_id: int):
+def get_user_rank(users: Users, user_id: int) -> int:
     users_rating = []
     for key, value in users.items():
         users_rating.append([key, value['statistic']['success_rate']])
-    users_rating
-    # нужно отсортировать
-
-    # потом из отсортированного списка нужно вернуть индекс того пользователя который мы ищем 
-    # индекс это метстро в рейтинге
 
 
-    return
-        
-get_user_rank(get_users(), 1)
+
+
+    def get_two_element(element: list) -> int: 
+        return element[1]
+
+    users_rating.sort(key=get_two_element, reverse=True)
+    for i in users_rating:
+        if user_id in i:
+            return users_rating.index(i)+1
+    return None  

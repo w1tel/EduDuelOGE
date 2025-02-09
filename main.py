@@ -117,9 +117,12 @@ def callback_query(call):
         bot.answer_callback_query(call.id)
         random_question = get_random_task()
 
-        bot.send_message(call.message.chat.id, random_question["text"])
+        # Отправляем заголовок и вопрос отдельными сообщениями
+        bot.send_message(call.message.chat.id, random_question['title'])
+        bot.send_message(call.message.chat.id, random_question['question'])
+        
         user["state"] = STATE_WAITING_ANSWER
-        user["correct_answer_question"] = random_question["correct_answer"]
+        user["correct_answer_question"] = random_question["correctAnswer"]
 
         update_user(user_id, user)
     elif call.data == "cb_stats":
@@ -256,11 +259,13 @@ def ask_next_question(user: dict, user_id: int, is_first: bool):
 
         # Берем первый вопрос из массива
         question = user["seria_of_questions"][0]
-        user["correct_answer_question"] = question["correct_answer"]
+        # Изменяем доступ к полям в соответствии с новой структурой
+        user["correct_answer_question"] = question["correctAnswer"]
         update_user(user_id, user)
 
-        # Отправляем текст вопроса
-        bot.send_message(user_id, question["text"])
+        # Отправляем заголовок и вопрос отдельными сообщениями
+        bot.send_message(user_id, question['title'])
+        bot.send_message(user_id, question['question'])
     else:
         # Шаг 3. Если вопросов нет, серия закончилась
         bot.send_message(user_id, "Вопросы в серии закончились.")

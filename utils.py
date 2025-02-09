@@ -1,27 +1,7 @@
-from typing import Any, Dict, Optional
+from typing import Any
 import os
 import json
-from typing import TypedDict
-from main import Question  # Add this import
-
-
-class Statistic(TypedDict):
-    total_tests: int
-    correct_answers: int
-    success_rate: int
-
-
-class User(TypedDict):
-    username: str
-    statistic: Statistic
-    number_of_tests: int
-    state: str
-    correct_answer_question: str | None
-    seria_of_questions: list[Question]
-
-
-# Основной словарь
-Users = Dict[int, User]
+from models import User, Users
 
 
 # ========== Функции для работы с json файлами ========== НАЧАЛО

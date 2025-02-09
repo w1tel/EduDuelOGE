@@ -14,31 +14,40 @@
     "180616110": {
         "username": "mosqitu",
         "statistic": {
-            "total_tests": 4,
+            "total_tests": 11,
             "correct_answers": 0,
             "success_rate": 0
         },
         "number_of_tests": 3,
         "state": "seria_questions",
-        "correct_answer_question": "[1, 2, 3, 4, 5, 9]",
+        "correct_answer_question": "[4, 8, 10]",
         "seria_of_questions": [
             {
-                "title": "Работа с множествами",
-                "question": "Какой результат напечатает программа?",
-                "correctAnswer": "[1, 2, 3, 4, 5, 9]",
-                "sequenceNumber": 32
+                "title": "Четные числа в списке",
+                "statement": "Напишите программу, которая получает на вход список чисел и выводит только чётные числа из него.",
+                "question": "Какой список чисел программа выведет при вводе: 3, 4, 7, 8, 10?",
+                "difficulty": "basic",
+                "answerFormat": "text",
+                "correctAnswer": "[4, 8, 10]",
+                "sequenceNumber": 2
             },
             {
-                "title": "Кодирование сообщения",
-                "question": "Какой двоичный код соответствует слову 'ABAC'?",
-                "correctAnswer": "01100111",
-                "sequenceNumber": 18
+                "title": "Перевод числа в другую систему счисления",
+                "statement": "Переведите число 101101₂ в десятичную систему счисления.",
+                "question": "Какое десятичное число соответствует 101101₂?",
+                "difficulty": "medium",
+                "answerFormat": "numeric",
+                "correctAnswer": "45",
+                "sequenceNumber": 3
             },
             {
-                "title": "Кодирование слова в двоичный код",
-                "question": "Какой двоичный код соответствует слову 'YZW'?",
-                "correctAnswer": "001010011",
-                "sequenceNumber": 11
+                "title": "Двоичное кодирование букв",
+                "statement": "Каждой букве соответствует двоичный код: A → 00, B → 01, C → 10, D → 11. Декодируйте двоичную последовательность: 100101.",
+                "question": "Какое слово соответствует двоичной последовательности 100101?",
+                "difficulty": "basic",
+                "answerFormat": "text",
+                "correctAnswer": "CAB",
+                "sequenceNumber": 20
             }
         ]
     },

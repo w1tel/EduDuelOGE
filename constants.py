@@ -29,6 +29,7 @@ QUESTION_TEMPLATE = formatting.format_text(
     "📝 ", formatting.hbold("{title}"), "\n\n",
     "📚 ", formatting.hitalic("{statement}"), "\n\n",
     "❓ ", formatting.hbold("Вопрос:"), " {question}\n",
+    "{code_block}",
     "📊 ", formatting.hbold("Сложность:"), " {difficulty}\n",
     "✍️ ", formatting.hbold("Формат ответа:"), " {answerFormat}",
     separator=""

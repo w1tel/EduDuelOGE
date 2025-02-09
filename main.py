@@ -1,6 +1,5 @@
 import telebot
 import logging
-from typing import TypedDict
 from telebot.types import Message, CallbackQuery, InlineKeyboardMarkup
 from dotenv import load_dotenv
 import os
@@ -10,11 +9,13 @@ from inline_keyboards import (
     get_markup_settings_menu,
     get_markup_back_button,
 )
-from utils import register_user, is_registered, update_user, get_user, get_users, User
+from utils import register_user, is_registered, update_user, get_user, get_users
 from questions import get_random_tasks, get_random_task
 from constants import HELP_COMMAND_TEXT, START_MAIN_MENU_TEXT
 from constants import RATING_TEXT_TEMPLATE, QUESTION_TEMPLATE
 from utils import get_user_rank
+from models import Question, User  # Импортируем типы из models.py
+from formatting import hbold
 
 logging.basicConfig(
     level=logging.INFO,
@@ -35,21 +36,16 @@ STATE_WAITING_ANSWER = "waitting_answer"
 STATE_SERIA_QUESTIONS = "seria_questions"
 
 
-class Question(TypedDict):
-    title: str
-    statement: str
-    question: str
-    difficulty: str
-    answerFormat: str
-    correctAnswer: str
-
-
 def format_question(question: Question) -> str:
     """Форматирует вопрос для отображения"""
+    # Формируем блок кода только если он есть
+    code_block = f"💻 {hbold('Код:')} \n<code>{question['code']}</code>\n" if question.get("code") else ""
+    
     return QUESTION_TEMPLATE.format(
         title=question["title"],
         statement=question["statement"],
         question=question["question"],
+        code_block=code_block,
         difficulty=question["difficulty"],
         answerFormat=question["answerFormat"]
     )

@@ -120,9 +120,10 @@ def callback_query(call: CallbackQuery) -> None:
         bot.answer_callback_query(call.id)
         random_question = get_random_task()
 
-        # Отправляем заголовок и вопрос отдельными сообщениями
-        bot.send_message(call.message.chat.id, random_question["title"])
-        bot.send_message(call.message.chat.id, random_question["question"])
+        # Отправляем заголовок и вопрос одним сообщением
+        message_text = f"📝 <b>{random_question['title']}</b>\n\n{random_question['question']}"
+        bot.send_message(call.message.chat.id, message_text, parse_mode="HTML")
+
 
         user["state"] = STATE_WAITING_ANSWER
         user["correct_answer_question"] = random_question["correctAnswer"]

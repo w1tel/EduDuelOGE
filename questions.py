@@ -12,7 +12,8 @@ def get_task_fields(task: dict) -> Question:
         "difficulty": task["difficulty"],
         "answerFormat": task["answerFormat"],
         "correctAnswer": task["correctAnswer"],
-        "sequenceNumber": task["sequenceNumber"]
+        "sequenceNumber": task["sequenceNumber"],
+        "code": task.get("code", "")
     }
 
 

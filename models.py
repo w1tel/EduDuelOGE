@@ -9,6 +9,8 @@ class Question(TypedDict):
     answerFormat: str
     correctAnswer: str
     sequenceNumber: int
+    code: str
+
 
 
 class Statistic(TypedDict):

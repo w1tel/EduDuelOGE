@@ -15,7 +15,8 @@ from constants import HELP_COMMAND_TEXT, START_MAIN_MENU_TEXT
 from constants import RATING_TEXT_TEMPLATE, QUESTION_TEMPLATE
 from utils import get_user_rank
 from models import Question, User  # Импортируем типы из models.py
-from formatting import hbold
+from telebot import formatting
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -39,15 +40,21 @@ STATE_SERIA_QUESTIONS = "seria_questions"
 def format_question(question: Question) -> str:
     """Форматирует вопрос для отображения"""
     # Формируем блок кода только если он есть
-    code_block = f"💻 {hbold('Код:')} \n<code>{question['code']}</code>\n" if question.get("code") else ""
-    
+    code_block = (
+        f"💻 {formatting.hbold('Код:')} \n<pre>{question['code']}</pre>\n"
+        if question.get("code")
+        else ""
+    )
+
+
+
     return QUESTION_TEMPLATE.format(
         title=question["title"],
         statement=question["statement"],
         question=question["question"],
         code_block=code_block,
         difficulty=question["difficulty"],
-        answerFormat=question["answerFormat"]
+        answerFormat=question["answerFormat"],
     )
 
 
@@ -121,10 +128,8 @@ def callback_query(call: CallbackQuery) -> None:
         user["state"] = STATE_SERIA_QUESTIONS
         user["seria_of_questions"].clear()
         user["seria_of_questions"].extend(questions)
+
         update_user(user_id, user)
-        # нужно выводить колличество вопросов в серии
-        # bot.send_message(call.message.chat.id, f'Задача - 1/{number_of_tests}')
-        # bot.send_message(call.message.chat.id, get_seria_question(user))
         ask_next_question(user=user, user_id=user_id, is_first=True)
     elif call.data == "cb_random":
         bot.answer_callback_query(call.id)
@@ -188,7 +193,7 @@ def handle_message(message: Message) -> None:
     )
     user = get_user(user_id)
     current_state = user["state"]
-    print(current_state)
+    
     if current_state == STATE_WAITING_ANSWER:
         user_answer = message.text
         if user_answer == user["correct_answer_question"]:
@@ -204,9 +209,7 @@ def handle_message(message: Message) -> None:
             (user["statistic"]["correct_answers"] / user["statistic"]["total_tests"])
             * 100
         )
-        print(user["statistic"]["success_rate"])
-        print(user["statistic"]["correct_answers"])
-        print(user["statistic"]["total_tests"])
+        
         update_user(user_id, user)
         bot.send_message(
             chat_id=message.chat.id,
@@ -216,7 +219,7 @@ def handle_message(message: Message) -> None:
     elif current_state == STATE_SERIA_QUESTIONS:
         handle_series_answer(user=user, user_id=user_id, user_answer=message.text)
     elif current_state == STATE_NUM_OF_TESTS:
-        print(user_message)
+
         if user_message.isdigit():
             if int(user_message) <= MAX_OF_TESTS:
                 user["number_of_tests"] = int(user_message)
@@ -274,7 +277,7 @@ def ask_next_question(user: User, user_id: int, is_first: bool) -> None:
         # Изменяем доступ к полям в соответствии с новой структурой
         user["correct_answer_question"] = question["correctAnswer"]
         update_user(user_id, user)
-
+        
         # Используем новый шаблон для форматирования вопроса
         message_text = format_question(question)
         bot.send_message(user_id, message_text, parse_mode="HTML")

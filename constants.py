@@ -24,3 +24,12 @@ RATING_TEXT_TEMPLATE = formatting.format_text(
     "\n\n💡 *Продолжай тренироваться, чтобы улучшить свой результат!*",
     separator=""
 )
+
+QUESTION_TEMPLATE = formatting.format_text(
+    "📝 ", formatting.hbold("{title}"), "\n\n",
+    "📚 ", formatting.hitalic("{statement}"), "\n\n",
+    "❓ ", formatting.hbold("Вопрос:"), " {question}\n",
+    "📊 ", formatting.hbold("Сложность:"), " {difficulty}\n",
+    "✍️ ", formatting.hbold("Формат ответа:"), " {answerFormat}",
+    separator=""
+)

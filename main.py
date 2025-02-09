@@ -13,7 +13,7 @@ from inline_keyboards import (
 from utils import register_user, is_registered, update_user, get_user, get_users, User
 from questions import get_random_tasks, get_random_task
 from constants import HELP_COMMAND_TEXT, START_MAIN_MENU_TEXT
-from constants import RATING_TEXT_TEMPLATE
+from constants import RATING_TEXT_TEMPLATE, QUESTION_TEMPLATE
 from utils import get_user_rank
 
 logging.basicConfig(
@@ -37,8 +37,22 @@ STATE_SERIA_QUESTIONS = "seria_questions"
 
 class Question(TypedDict):
     title: str
+    statement: str
     question: str
+    difficulty: str
+    answerFormat: str
     correctAnswer: str
+
+
+def format_question(question: Question) -> str:
+    """Форматирует вопрос для отображения"""
+    return QUESTION_TEMPLATE.format(
+        title=question["title"],
+        statement=question["statement"],
+        question=question["question"],
+        difficulty=question["difficulty"],
+        answerFormat=question["answerFormat"]
+    )
 
 
 @bot.message_handler(commands=["start"])
@@ -120,14 +134,12 @@ def callback_query(call: CallbackQuery) -> None:
         bot.answer_callback_query(call.id)
         random_question = get_random_task()
 
-        # Отправляем заголовок и вопрос одним сообщением
-        message_text = f"📝 <b>{random_question['title']}</b>\n\n{random_question['question']}"
+        # Используем новый шаблон для форматирования вопроса
+        message_text = format_question(random_question)
         bot.send_message(call.message.chat.id, message_text, parse_mode="HTML")
-
 
         user["state"] = STATE_WAITING_ANSWER
         user["correct_answer_question"] = random_question["correctAnswer"]
-
         update_user(user_id, user)
     elif call.data == "cb_stats":
         bot.answer_callback_query(call.id, "Мой рейтинг")
@@ -267,9 +279,9 @@ def ask_next_question(user: User, user_id: int, is_first: bool) -> None:
         user["correct_answer_question"] = question["correctAnswer"]
         update_user(user_id, user)
 
-        # Отправляем заголовок и вопрос отдельными сообщениями
-        bot.send_message(user_id, question["title"])
-        bot.send_message(user_id, question["question"])
+        # Используем новый шаблон для форматирования вопроса
+        message_text = format_question(question)
+        bot.send_message(user_id, message_text, parse_mode="HTML")
     else:
         # Шаг 3. Если вопросов нет, серия закончилась
         bot.send_message(user_id, "Вопросы в серии закончились.")

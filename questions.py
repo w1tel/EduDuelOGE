@@ -1,6 +1,5 @@
 import random
-from typing import Any, Dict, Optional, List
-import json
+
 from utils import read_json
 
 def get_random_tasks(amount_of_tasks: int) -> list[dict]:

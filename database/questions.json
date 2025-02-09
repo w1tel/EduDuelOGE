@@ -1,0 +1,831 @@
+{
+  "tasks": [
+    {
+      "taskType": "logic_expressions",
+      "sequenceNumber": 1,
+      "title": "Определение истинности логического выражения",
+      "difficulty": "medium",
+      "statement": "Дано логическое выражение: (A → B) ∧ (¬B ∨ C). Сколько различных наборов значений переменных A, B, C делают его истинным?",
+      "question": "Сколько различных наборов (A, B, C) делают выражение истинным?",
+      "answerFormat": "numeric",
+      "correctAnswer": "6",
+      "solutionExplanation": "Рассматриваем таблицу истинности, находим количество истинных значений.",
+      "metadata": {
+        "FIOGSElements": [
+          "Логические выражения"
+        ],
+        "tags": [
+          "логика",
+          "булева алгебра"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 2,
+      "title": "Четные числа в списке",
+      "difficulty": "basic",
+      "statement": "Напишите программу, которая получает на вход список чисел и выводит только чётные числа из него.",
+      "question": "Какой список чисел программа выведет при вводе: 3, 4, 7, 8, 10?",
+      "answerFormat": "text",
+      "correctAnswer": "[4, 8, 10]",
+      "solutionExplanation": "Программа проверяет каждое число на чётность (остаток от деления на 2 равен 0) и выводит его, если условие выполняется.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Работа со списками"
+        ],
+        "tags": [
+          "Python",
+          "циклы",
+          "условия"
+        ]
+      }
+    },
+    {
+      "taskType": "base_conversion",
+      "sequenceNumber": 3,
+      "title": "Перевод числа в другую систему счисления",
+      "difficulty": "medium",
+      "statement": "Переведите число 101101₂ в десятичную систему счисления.",
+      "question": "Какое десятичное число соответствует 101101₂?",
+      "answerFormat": "numeric",
+      "correctAnswer": "45",
+      "solutionExplanation": "Разложение: 1×2⁵ + 0×2⁴ + 1×2³ + 1×2² + 0×2¹ + 1×2⁰ = 32 + 0 + 8 + 4 + 0 + 1 = 45.",
+      "metadata": {
+        "FIOGSElements": [
+          "Системы счисления"
+        ],
+        "tags": [
+          "перевод чисел",
+          "двоичная система"
+        ]
+      }
+    },
+    {
+      "tasks": [
+        {
+          "taskType": "logic_expressions",
+          "sequenceNumber": 4,
+          "title": "Определение истинности логического выражения",
+          "difficulty": "medium",
+          "statement": "Дано логическое выражение: (A → B) ∧ (¬B ∨ C). Сколько различных наборов значений переменных A, B, C делают его истинным?",
+          "question": "Сколько различных наборов (A, B, C) делают выражение истинным?",
+          "answerFormat": "numeric",
+          "correctAnswer": "6",
+          "solutionExplanation": "Рассматриваем таблицу истинности, находим количество истинных значений.",
+          "metadata": {
+            "FIOGSElements": [
+              "Логические выражения"
+            ],
+            "tags": [
+              "логика",
+              "булева алгебра"
+            ]
+          }
+        },
+        {
+          "taskType": "programming",
+          "sequenceNumber": 5,
+          "title": "Четные числа в списке",
+          "difficulty": "basic",
+          "statement": "Напишите программу, которая получает на вход список чисел и выводит только чётные числа из него.",
+          "question": "Какой список чисел программа выведет при вводе: 3, 4, 7, 8, 10?",
+          "answerFormat": "text",
+          "correctAnswer": "[4, 8, 10]",
+          "solutionExplanation": "Программа проверяет каждое число на чётность (остаток от деления на 2 равен 0) и выводит его, если условие выполняется.",
+          "metadata": {
+            "FIOGSElements": [
+              "Программирование",
+              "Работа со списками"
+            ],
+            "tags": [
+              "Python",
+              "циклы",
+              "условия"
+            ]
+          }
+        },
+        {
+          "taskType": "base_conversion",
+          "sequenceNumber": 6,
+          "title": "Перевод числа в другую систему счисления",
+          "difficulty": "medium",
+          "statement": "Переведите число 101101₂ в десятичную систему счисления.",
+          "question": "Какое десятичное число соответствует 101101₂?",
+          "answerFormat": "numeric",
+          "correctAnswer": "45",
+          "solutionExplanation": "Разложение: 1×2⁵ + 0×2⁴ + 1×2³ + 1×2² + 0×2¹ + 1×2⁰ = 32 + 0 + 8 + 4 + 0 + 1 = 45.",
+          "metadata": {
+            "FIOGSElements": [
+              "Системы счисления"
+            ],
+            "tags": [
+              "перевод чисел",
+              "двоичная система"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "tasks": [
+        {
+          "taskType": "logic_expressions",
+          "sequenceNumber": 7,
+          "title": "Определение истинности логического выражения",
+          "difficulty": "medium",
+          "statement": "Дано логическое выражение: (A → B) ∧ (¬B ∨ C). Сколько различных наборов значений переменных A, B, C делают его истинным?",
+          "question": "Сколько различных наборов (A, B, C) делают выражение истинным?",
+          "answerFormat": "numeric",
+          "correctAnswer": "6",
+          "solutionExplanation": "Рассматриваем таблицу истинности, находим количество истинных значений.",
+          "metadata": {
+            "FIOGSElements": [
+              "Логические выражения"
+            ],
+            "tags": [
+              "логика",
+              "булева алгебра"
+            ]
+          }
+        },
+        {
+          "taskType": "programming",
+          "sequenceNumber": 8,
+          "title": "Четные числа в списке",
+          "difficulty": "basic",
+          "statement": "Напишите программу, которая получает на вход список чисел и выводит только чётные числа из него.",
+          "question": "Какой список чисел программа выведет при вводе: 3, 4, 7, 8, 10?",
+          "answerFormat": "text",
+          "correctAnswer": "[4, 8, 10]",
+          "solutionExplanation": "Программа проверяет каждое число на чётность (остаток от деления на 2 равен 0) и выводит его, если условие выполняется.",
+          "metadata": {
+            "FIOGSElements": [
+              "Программирование",
+              "Работа со списками"
+            ],
+            "tags": [
+              "Python",
+              "циклы",
+              "условия"
+            ]
+          }
+        },
+        {
+          "taskType": "base_conversion",
+          "sequenceNumber": 9,
+          "title": "Перевод числа в другую систему счисления",
+          "difficulty": "medium",
+          "statement": "Переведите число 101101₂ в десятичную систему счисления.",
+          "question": "Какое десятичное число соответствует 101101₂?",
+          "answerFormat": "numeric",
+          "correctAnswer": "45",
+          "solutionExplanation": "Разложение: 1×2⁵ + 0×2⁴ + 1×2³ + 1×2² + 0×2¹ + 1×2⁰ = 32 + 0 + 8 + 4 + 0 + 1 = 45.",
+          "metadata": {
+            "FIOGSElements": [
+              "Системы счисления"
+            ],
+            "tags": [
+              "перевод чисел",
+              "двоичная система"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 10,
+      "title": "Двоичное кодирование букв",
+      "difficulty": "basic",
+      "statement": "Каждой букве соответствует двоичный код: A → 00, B → 01, C → 10, D → 11. Декодируйте двоичную последовательность: 100101.",
+      "question": "Какое слово соответствует двоичной последовательности 100101?",
+      "answerFormat": "text",
+      "correctAnswer": "CAB",
+      "solutionExplanation": "Разбиваем на двоичные пары: 10 → C, 01 → A, 01 → B.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "двоичное кодирование",
+          "декодирование",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 11,
+      "title": "Кодирование слова в двоичный код",
+      "difficulty": "medium",
+      "statement": "Используется кодировка: X → 000, Y → 001, Z → 010, W → 011. Закодируйте слово 'YZW'.",
+      "question": "Какой двоичный код соответствует слову 'YZW'?",
+      "answerFormat": "text",
+      "correctAnswer": "001010011",
+      "solutionExplanation": "Y → 001, Z → 010, W → 011. Соединяем коды: 001010011.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "кодирование",
+          "двоичные слова",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 12,
+      "title": "Декодирование двоичного слова",
+      "difficulty": "medium",
+      "statement": "Каждой букве соответствует код: M → 110, N → 101, O → 011, P → 111. Декодируйте последовательность 110101011.",
+      "question": "Какое слово соответствует двоичной последовательности 110101011?",
+      "answerFormat": "text",
+      "correctAnswer": "MNO",
+      "solutionExplanation": "Разбиваем на тройки: 110 → M, 101 → N, 011 → O.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "кодирование",
+          "декодирование",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 13,
+      "title": "Кодирование сообщения",
+      "difficulty": "advanced",
+      "statement": "Алфавит кодируется так: A → 01, B → 10, C → 11. Закодируйте слово 'ABAC'.",
+      "question": "Какой двоичный код соответствует слову 'ABAC'?",
+      "answerFormat": "text",
+      "correctAnswer": "01100111",
+      "solutionExplanation": "A → 01, B → 10, A → 01, C → 11. Соединяем коды: 01100111.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "кодирование",
+          "двоичные слова",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 14,
+      "title": "Поиск ошибки в двоичном коде",
+      "difficulty": "advanced",
+      "statement": "Используется кодировка: R → 000, S → 001, T → 010, U → 011. В переданной последовательности 000011010 есть одна ошибка. Какой символ искажён?",
+      "question": "Какой символ искажён в последовательности 000011010?",
+      "answerFormat": "text",
+      "correctAnswer": "T",
+      "solutionExplanation": "Разбиваем код: 000 → R, 011 → U, 010 → T. Однако известно, что последовательность содержит ошибку. В корректном виде T кодируется как 010, но его часть могла исказиться. Проверив возможные варианты, обнаруживаем ошибку в 010, означающую, что изменённый символ — T.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "декодирование",
+          "поиск ошибок",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 15,
+      "title": "Двоичное кодирование букв",
+      "difficulty": "basic",
+      "statement": "Каждой букве соответствует двоичный код: A → 00, B → 01, C → 10, D → 11. Декодируйте двоичную последовательность: 100101.",
+      "question": "Какое слово соответствует двоичной последовательности 100101?",
+      "answerFormat": "text",
+      "correctAnswer": "CAB",
+      "solutionExplanation": "Разбиваем на двоичные пары: 10 → C, 01 → A, 01 → B.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "двоичное кодирование",
+          "декодирование",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 16,
+      "title": "Кодирование слова в двоичный код",
+      "difficulty": "medium",
+      "statement": "Используется кодировка: X → 000, Y → 001, Z → 010, W → 011. Закодируйте слово 'YZW'.",
+      "question": "Какой двоичный код соответствует слову 'YZW'?",
+      "answerFormat": "text",
+      "correctAnswer": "001010011",
+      "solutionExplanation": "Y → 001, Z → 010, W → 011. Соединяем коды: 001010011.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "кодирование",
+          "двоичные слова",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 17,
+      "title": "Декодирование двоичного слова",
+      "difficulty": "medium",
+      "statement": "Каждой букве соответствует код: M → 110, N → 101, O → 011, P → 111. Декодируйте последовательность 110101011.",
+      "question": "Какое слово соответствует двоичной последовательности 110101011?",
+      "answerFormat": "text",
+      "correctAnswer": "MNO",
+      "solutionExplanation": "Разбиваем на тройки: 110 → M, 101 → N, 011 → O.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "кодирование",
+          "декодирование",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 18,
+      "title": "Кодирование сообщения",
+      "difficulty": "advanced",
+      "statement": "Алфавит кодируется так: A → 01, B → 10, C → 11. Закодируйте слово 'ABAC'.",
+      "question": "Какой двоичный код соответствует слову 'ABAC'?",
+      "answerFormat": "text",
+      "correctAnswer": "01100111",
+      "solutionExplanation": "A → 01, B → 10, A → 01, C → 11. Соединяем коды: 01100111.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "кодирование",
+          "двоичные слова",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 19,
+      "title": "Поиск ошибки в двоичном коде",
+      "difficulty": "advanced",
+      "statement": "Используется кодировка: R → 000, S → 001, T → 010, U → 011. В переданной последовательности 000011010 есть одна ошибка. Какой символ искажён?",
+      "question": "Какой символ искажён в последовательности 000011010?",
+      "answerFormat": "text",
+      "correctAnswer": "T",
+      "solutionExplanation": "Разбиваем код: 000 → R, 011 → U, 010 → T. Однако известно, что последовательность содержит ошибку. В корректном виде T кодируется как 010, но его часть могла исказиться. Проверив возможные варианты, обнаруживаем ошибку в 010, означающую, что изменённый символ — T.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "декодирование",
+          "поиск ошибок",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 20,
+      "title": "Двоичное кодирование букв",
+      "difficulty": "basic",
+      "statement": "Каждой букве соответствует двоичный код: A → 00, B → 01, C → 10, D → 11. Декодируйте двоичную последовательность: 100101.",
+      "question": "Какое слово соответствует двоичной последовательности 100101?",
+      "answerFormat": "text",
+      "correctAnswer": "CAB",
+      "solutionExplanation": "Разбиваем на двоичные пары: 10 → C, 01 → A, 01 → B.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "двоичное кодирование",
+          "декодирование",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 21,
+      "title": "Кодирование слова в двоичный код",
+      "difficulty": "medium",
+      "statement": "Используется кодировка: X → 000, Y → 001, Z → 010, W → 011. Закодируйте слово 'YZW'.",
+      "question": "Какой двоичный код соответствует слову 'YZW'?",
+      "answerFormat": "text",
+      "correctAnswer": "001010011",
+      "solutionExplanation": "Y → 001, Z → 010, W → 011. Соединяем коды: 001010011.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "кодирование",
+          "двоичные слова",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 22,
+      "title": "Декодирование двоичного слова",
+      "difficulty": "medium",
+      "statement": "Каждой букве соответствует код: M → 110, N → 101, O → 011, P → 111. Декодируйте последовательность 110101011.",
+      "question": "Какое слово соответствует двоичной последовательности 110101011?",
+      "answerFormat": "text",
+      "correctAnswer": "MNO",
+      "solutionExplanation": "Разбиваем на тройки: 110 → M, 101 → N, 011 → O.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "кодирование",
+          "декодирование",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 23,
+      "title": "Кодирование сообщения",
+      "difficulty": "advanced",
+      "statement": "Алфавит кодируется так: A → 01, B → 10, C → 11. Закодируйте слово 'ABAC'.",
+      "question": "Какой двоичный код соответствует слову 'ABAC'?",
+      "answerFormat": "text",
+      "correctAnswer": "01100111",
+      "solutionExplanation": "A → 01, B → 10, A → 01, C → 11. Соединяем коды: 01100111.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "кодирование",
+          "двоичные слова",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "coding_decoding",
+      "sequenceNumber": 24,
+      "title": "Поиск ошибки в двоичном коде",
+      "difficulty": "advanced",
+      "statement": "Используется кодировка: R → 000, S → 001, T → 010, U → 011. В переданной последовательности 000011010 есть одна ошибка. Какой символ искажён?",
+      "question": "Какой символ искажён в последовательности 000011010?",
+      "answerFormat": "text",
+      "correctAnswer": "T",
+      "solutionExplanation": "Разбиваем код: 000 → R, 011 → U, 010 → T. Однако известно, что последовательность содержит ошибку. В корректном виде T кодируется как 010, но его часть могла исказиться. Проверив возможные варианты, обнаруживаем ошибку в 010, означающую, что изменённый символ — T.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "декодирование",
+          "поиск ошибок",
+          "кодовые таблицы"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 25,
+      "title": "Анализ работы цикла",
+      "difficulty": "basic",
+      "statement": "Рассмотрите следующий код на Python:\n\n```python\nfor i in range(1, 6, 2):\n    print(i, end=' ')\n```",
+      "question": "Какой вывод будет у данного кода?",
+      "answerFormat": "text",
+      "correctAnswer": "1 3 5",
+      "solutionExplanation": "Цикл проходит по числам 1, 3, 5, используя шаг 2. Выводится строка '1 3 5'.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Циклы"
+        ],
+        "tags": [
+          "Python",
+          "for",
+          "анализ кода"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 26,
+      "title": "Работа с изменяемыми объектами",
+      "difficulty": "medium",
+      "statement": "Что выведет следующий код на Python?\n\n```python\ndef modify_list(lst):\n    lst.append(4)\n\nnumbers = [1, 2, 3]\nmodify_list(numbers)\nprint(numbers)\n```",
+      "question": "Какой будет результат выполнения программы?",
+      "answerFormat": "text",
+      "correctAnswer": "[1, 2, 3, 4]",
+      "solutionExplanation": "Список передаётся по ссылке, функция modify_list изменяет его, добавляя 4.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Списки"
+        ],
+        "tags": [
+          "Python",
+          "функции",
+          "списки"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 27,
+      "title": "Работа с множествами",
+      "difficulty": "medium",
+      "statement": "Что выведет следующий код?\n\n```python\ns = {3, 1, 4, 1, 5, 9, 2}\nprint(sorted(s))\n```",
+      "question": "Какой результат напечатает программа?",
+      "answerFormat": "text",
+      "correctAnswer": "[1, 2, 3, 4, 5, 9]",
+      "solutionExplanation": "Множество хранит только уникальные элементы, а функция sorted() сортирует их.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Множества"
+        ],
+        "tags": [
+          "Python",
+          "sorted",
+          "множества"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 28,
+      "title": "Разница между локальной и глобальной переменной",
+      "difficulty": "advanced",
+      "statement": "Какой будет вывод у следующего кода?\n\n```python\ndef func():\n    x = 10\n    print(x)\n\nx = 5\nfunc()\nprint(x)\n```",
+      "question": "Какой результат напечатает программа?",
+      "answerFormat": "text",
+      "correctAnswer": "10\n5",
+      "solutionExplanation": "Внутри функции создаётся локальная переменная x = 10, но глобальная x = 5 остаётся неизменной.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Переменные"
+        ],
+        "tags": [
+          "Python",
+          "локальные и глобальные переменные"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 29,
+      "title": "Работа с логическими значениями",
+      "difficulty": "basic",
+      "statement": "Что выведет следующий код?\n\n```python\na = True\nb = False\nprint(a and not b, a or b, not (a and b))\n```",
+      "question": "Какой результат напечатает программа?",
+      "answerFormat": "text",
+      "correctAnswer": "True True True",
+      "solutionExplanation": "Логические операции выполняются последовательно: 'True and not False' → True, 'True or False' → True, 'not (True and False)' → True.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Логические выражения"
+        ],
+        "tags": [
+          "Python",
+          "логические операции",
+          "булева алгебра"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 30,
+      "title": "Анализ работы цикла",
+      "difficulty": "basic",
+      "statement": "Рассмотрите следующий код на Python:\n\n```python\nfor i in range(1, 6, 2):\n    print(i, end=' ')\n```",
+      "question": "Какой вывод будет у данного кода?",
+      "answerFormat": "text",
+      "correctAnswer": "1 3 5",
+      "solutionExplanation": "Цикл проходит по числам 1, 3, 5, используя шаг 2. Выводится строка '1 3 5'.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Циклы"
+        ],
+        "tags": [
+          "Python",
+          "for",
+          "анализ кода"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 31,
+      "title": "Работа с изменяемыми объектами",
+      "difficulty": "medium",
+      "statement": "Что выведет следующий код на Python?\n\n```python\ndef modify_list(lst):\n    lst.append(4)\n\nnumbers = [1, 2, 3]\nmodify_list(numbers)\nprint(numbers)\n```",
+      "question": "Какой будет результат выполнения программы?",
+      "answerFormat": "text",
+      "correctAnswer": "[1, 2, 3, 4]",
+      "solutionExplanation": "Список передаётся по ссылке, функция modify_list изменяет его, добавляя 4.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Списки"
+        ],
+        "tags": [
+          "Python",
+          "функции",
+          "списки"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 32,
+      "title": "Работа с множествами",
+      "difficulty": "medium",
+      "statement": "Что выведет следующий код?\n\n```python\ns = {3, 1, 4, 1, 5, 9, 2}\nprint(sorted(s))\n```",
+      "question": "Какой результат напечатает программа?",
+      "answerFormat": "text",
+      "correctAnswer": "[1, 2, 3, 4, 5, 9]",
+      "solutionExplanation": "Множество хранит только уникальные элементы, а функция sorted() сортирует их.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Множества"
+        ],
+        "tags": [
+          "Python",
+          "sorted",
+          "множества"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 33,
+      "title": "Разница между локальной и глобальной переменной",
+      "difficulty": "advanced",
+      "statement": "Какой будет вывод у следующего кода?\n\n```python\ndef func():\n    x = 10\n    print(x)\n\nx = 5\nfunc()\nprint(x)\n```",
+      "question": "Какой результат напечатает программа?",
+      "answerFormat": "text",
+      "correctAnswer": "10\n5",
+      "solutionExplanation": "Внутри функции создаётся локальная переменная x = 10, но глобальная x = 5 остаётся неизменной.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Переменные"
+        ],
+        "tags": [
+          "Python",
+          "локальные и глобальные переменные"
+        ]
+      }
+    },
+    {
+      "taskType": "programming",
+      "sequenceNumber": 34,
+      "title": "Работа с логическими значениями",
+      "difficulty": "basic",
+      "statement": "Что выведет следующий код?\n\n```python\na = True\nb = False\nprint(a and not b, a or b, not (a and b))\n```",
+      "question": "Какой результат напечатает программа?",
+      "answerFormat": "text",
+      "correctAnswer": "True True True",
+      "solutionExplanation": "Логические операции выполняются последовательно: 'True and not False' → True, 'True or False' → True, 'not (True and False)' → True.",
+      "metadata": {
+        "FIOGSElements": [
+          "Программирование",
+          "Логические выражения"
+        ],
+        "tags": [
+          "Python",
+          "логические операции",
+          "булева алгебра"
+        ]
+      }
+    },
+    {
+      "taskType": "general",
+      "sequenceNumber": 35,
+      "title": "Расчёт информационного объёма в Unicode",
+      "difficulty": "medium",
+      "statement": "Рассказ, набранный на компьютере, содержит 7 страниц, на каждой странице 38 строк, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке Unicode, в которой каждый символ кодируется 16 битами. Ответ округлите до целого.",
+      "question": "Каков информационный объём рассказа в Кбайтах?",
+      "answerFormat": "numeric",
+      "correctAnswer": "12",
+      "solutionExplanation": "Общий объём символов: 7 × 38 × 24 = 6384 символа. Каждый символ — 16 бит (2 байта). Объём в байтах: 6384 × 2 = 12768 байт. В Кбайтах: 12768 / 1024 ≈ 12 КБ.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "Unicode",
+          "информационный объём"
+        ]
+      }
+    },
+    {
+      "taskType": "general",
+      "sequenceNumber": 36,
+      "title": "Расчёт информационного объёма в ASCII",
+      "difficulty": "medium",
+      "statement": "Рассказ, набранный на компьютере, содержит 8 страниц, на каждой странице 42 строки, в каждой строке 48 символов. Определите информационный объём рассказа в Кбайтах в кодировке ASCII. Ответ округлите до целого.",
+      "question": "Каков информационный объём рассказа в Кбайтах?",
+      "answerFormat": "numeric",
+      "correctAnswer": "16",
+      "solutionExplanation": "Общий объём символов: 8 × 42 × 48 = 16128 символов. В ASCII каждый символ — 1 байт. В Кбайтах: 16128 / 1024 ≈ 16 КБ.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "ASCII",
+          "информационный объём"
+        ]
+      }
+    },
+    {
+      "taskType": "general",
+      "sequenceNumber": 37,
+      "title": "Расчёт информационного объёма в UTF-32",
+      "difficulty": "medium",
+      "statement": "Рассказ, набранный на компьютере, содержит 2 страницы, на каждой странице 43 строки, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке UTF-32. Ответ округлите до целого.",
+      "question": "Каков информационный объём рассказа в Кбайтах?",
+      "answerFormat": "numeric",
+      "correctAnswer": "8",
+      "solutionExplanation": "Общий объём символов: 2 × 43 × 24 = 2064 символов. В UTF-32 каждый символ занимает 4 байта. В Кбайтах: (2064 × 4) / 1024 ≈ 8 КБ.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "UTF-32",
+          "информационный объём"
+        ]
+      }
+    },
+    {
+      "taskType": "general",
+      "sequenceNumber": 38,
+      "title": "Расчёт информационного объёма в Windows-1251",
+      "difficulty": "medium",
+      "statement": "Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 44 строки, в каждой строке 24 символа. Определите информационный объём рассказа в Кбайтах в кодировке Windows-1251. Ответ округлите до целого.",
+      "question": "Каков информационный объём рассказа в Кбайтах?",
+      "answerFormat": "numeric",
+      "correctAnswer": "5",
+      "solutionExplanation": "Общий объём символов: 5 × 44 × 24 = 5280 символов. В Windows-1251 каждый символ — 1 байт. В Кбайтах: 5280 / 1024 ≈ 5 КБ.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "Windows-1251",
+          "информационный объём"
+        ]
+      }
+    },
+    {
+      "taskType": "general",
+      "sequenceNumber": 39,
+      "title": "Расчёт информационного объёма в UTF-8",
+      "difficulty": "medium",
+      "statement": "Рассказ, набранный на компьютере, содержит 5 страниц, на каждой странице 34 строки, в каждой строке 40 символов. Определите информационный объём рассказа в Кбайтах в кодировке UTF-8. Ответ округлите до целого.",
+      "question": "Каков информационный объём рассказа в Кбайтах?",
+      "answerFormat": "numeric",
+      "correctAnswer": "7",
+      "solutionExplanation": "Общий объём символов: 5 × 34 × 40 = 6800 символов. В UTF-8 символ занимает в среднем 1.1 байта. В Кбайтах: (6800 × 1.1) / 1024 ≈ 7 КБ.",
+      "metadata": {
+        "FIOGSElements": [
+          "Кодирование данных"
+        ],
+        "tags": [
+          "UTF-8",
+          "информационный объём"
+        ]
+      }
+    }
+  ]
+}

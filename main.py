@@ -39,7 +39,6 @@ class Question(TypedDict):
     title: str
     question: str
     correctAnswer: str
-    sequenceNumber: int
 
 
 @bot.message_handler(commands=["start"])
@@ -73,11 +72,12 @@ def start_message(message: Message) -> None:
     )
 
 
-def get_seria_question(user):
+def get_seria_question(user: User) -> str | bool:
+    """Получает текущий вопрос из серии"""
     if user["seria_of_questions"]:
-        question = user["seria_of_questions"][0]
-        text_of_question = question["text"]
-        correct_answer = question["correct_answer"]
+        question: Question = user["seria_of_questions"][0]
+        text_of_question = question["question"]
+        correct_answer = question["correctAnswer"]
         user["correct_answer_question"] = correct_answer
         return text_of_question
     return False
@@ -121,9 +121,9 @@ def callback_query(call: CallbackQuery) -> None:
         random_question = get_random_task()
 
         # Отправляем заголовок и вопрос отдельными сообщениями
-        bot.send_message(call.message.chat.id, random_question['title'])
-        bot.send_message(call.message.chat.id, random_question['question'])
-        
+        bot.send_message(call.message.chat.id, random_question["title"])
+        bot.send_message(call.message.chat.id, random_question["question"])
+
         user["state"] = STATE_WAITING_ANSWER
         user["correct_answer_question"] = random_question["correctAnswer"]
 
@@ -165,13 +165,13 @@ def callback_query(call: CallbackQuery) -> None:
 
 
 @bot.message_handler(commands=["help"])
-def help_message(message):
+def help_message(message: Message) -> None:
     bot.send_message(message.chat.id, HELP_COMMAND_TEXT, parse_mode="HTML")
 
 
 # обработчик ответов пользователя(проверяет на правильность ответа)
 @bot.message_handler(func=lambda message: True)
-def handle_message(message):
+def handle_message(message: Message) -> None:
     user_id = message.from_user.id
     user_message = message.text
     logger.info(
@@ -183,11 +183,11 @@ def handle_message(message):
     if current_state == STATE_WAITING_ANSWER:
         user_answer = message.text
         if user_answer == user["correct_answer_question"]:
-            bot.send_message(user_id, f"Правильный ответ!")
+            bot.send_message(user_id, "Правильный ответ!")
             user["statistic"]["correct_answers"] += 1
             user["statistic"]["total_tests"] += 1
         else:
-            bot.send_message(user_id, f"Увы, ответ не верный!")
+            bot.send_message(user_id, "Увы, ответ не верный!")
             user["statistic"]["total_tests"] += 1
             user["state"] = STATE_START
         user["correct_answer_question"] = None
@@ -267,8 +267,8 @@ def ask_next_question(user: User, user_id: int, is_first: bool) -> None:
         update_user(user_id, user)
 
         # Отправляем заголовок и вопрос отдельными сообщениями
-        bot.send_message(user_id, question['title'])
-        bot.send_message(user_id, question['question'])
+        bot.send_message(user_id, question["title"])
+        bot.send_message(user_id, question["question"])
     else:
         # Шаг 3. Если вопросов нет, серия закончилась
         bot.send_message(user_id, "Вопросы в серии закончились.")
@@ -281,7 +281,7 @@ def ask_next_question(user: User, user_id: int, is_first: bool) -> None:
         )
 
 
-def handle_series_answer(user: dict, user_id: int, user_answer: str):
+def handle_series_answer(user: User, user_id: int, user_answer: str) -> None:
     """
     Проверяем, правильный ли ответ, обновляем статистику,
     после чего переходим к следующему вопросу,
@@ -305,11 +305,11 @@ def handle_series_answer(user: dict, user_id: int, user_answer: str):
 
 
 def replace_message(
-    chat_id: int, 
-    message_id: int, 
-    new_text: str, 
-    reply_markup: InlineKeyboardMarkup | None = None, 
-    parse_mode: str = "HTML"
+    chat_id: int,
+    message_id: int,
+    new_text: str,
+    reply_markup: InlineKeyboardMarkup | None = None,
+    parse_mode: str = "HTML",
 ) -> Message:
     """
     Сначала удаляет старое сообщение по chat_id и message_id,

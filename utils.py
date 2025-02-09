@@ -2,6 +2,7 @@ from typing import Any, Dict, Optional
 import os
 import json
 from typing import TypedDict
+from main import Question  # Add this import
 
 
 class Statistic(TypedDict):
@@ -15,8 +16,8 @@ class User(TypedDict):
     statistic: Statistic
     number_of_tests: int
     state: str
-    correct_answer_question: Optional[int]
-    seria_of_questions: list
+    correct_answer_question: str | None
+    seria_of_questions: list[Question]
 
 
 # Основной словарь

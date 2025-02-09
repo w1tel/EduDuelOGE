@@ -2,9 +2,9 @@
     "1845480898": {
         "username": "J_S_0_o_N",
         "statistic": {
-            "total_tests": 13,
-            "correct_answers": 4,
-            "success_rate": 30
+            "total_tests": 20,
+            "correct_answers": 5,
+            "success_rate": 25
         },
         "number_of_tests": 5,
         "state": "waitting_num_of_tests",
@@ -14,14 +14,33 @@
     "180616110": {
         "username": "mosqitu",
         "statistic": {
-            "total_tests": 3,
+            "total_tests": 4,
             "correct_answers": 0,
             "success_rate": 0
         },
         "number_of_tests": 3,
-        "state": "main_menu",
-        "correct_answer_question": null,
-        "seria_of_questions": []
+        "state": "seria_questions",
+        "correct_answer_question": "[1, 2, 3, 4, 5, 9]",
+        "seria_of_questions": [
+            {
+                "title": "Работа с множествами",
+                "question": "Какой результат напечатает программа?",
+                "correctAnswer": "[1, 2, 3, 4, 5, 9]",
+                "sequenceNumber": 32
+            },
+            {
+                "title": "Кодирование сообщения",
+                "question": "Какой двоичный код соответствует слову 'ABAC'?",
+                "correctAnswer": "01100111",
+                "sequenceNumber": 18
+            },
+            {
+                "title": "Кодирование слова в двоичный код",
+                "question": "Какой двоичный код соответствует слову 'YZW'?",
+                "correctAnswer": "001010011",
+                "sequenceNumber": 11
+            }
+        ]
     },
     "980814239": {
         "username": "maksimus_re",

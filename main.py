@@ -1,5 +1,7 @@
 import telebot
 import logging
+from typing import TypedDict
+from telebot.types import Message, CallbackQuery, InlineKeyboardMarkup
 from dotenv import load_dotenv
 import os
 from inline_keyboards import (
@@ -8,13 +10,8 @@ from inline_keyboards import (
     get_markup_settings_menu,
     get_markup_back_button,
 )
-from utils import register_user
-from utils import is_registered
-from utils import update_user
-from utils import get_user
-from utils import get_users
-from questions import get_random_tasks
-from questions import get_random_task
+from utils import register_user, is_registered, update_user, get_user, get_users, User
+from questions import get_random_tasks, get_random_task
 from constants import HELP_COMMAND_TEXT, START_MAIN_MENU_TEXT
 from constants import RATING_TEXT_TEMPLATE
 from utils import get_user_rank
@@ -38,8 +35,15 @@ STATE_WAITING_ANSWER = "waitting_answer"
 STATE_SERIA_QUESTIONS = "seria_questions"
 
 
+class Question(TypedDict):
+    title: str
+    question: str
+    correctAnswer: str
+    sequenceNumber: int
+
+
 @bot.message_handler(commands=["start"])
-def start_message(message):
+def start_message(message: Message) -> None:
     user_id = message.from_user.id
 
     logger.info(f"User {user_id} sent /start command")
@@ -47,7 +51,7 @@ def start_message(message):
     if not is_registered(user_id):
         logger.info(f"Registering new user: {user_id})")
         bot.send_message(user_id, "Мы тебя зарегистрировали👌")
-        user_data = {
+        user_data: User = {
             "username": message.from_user.username,
             "statistic": {"total_tests": 0, "correct_answers": 0, "success_rate": 0},
             "number_of_tests": 3,
@@ -55,7 +59,6 @@ def start_message(message):
             "correct_answer_question": None,
             "seria_of_questions": [],
         }
-
         register_user(user_id, user_data)
     else:
         logger.info(f"User {user_id} is already registered")
@@ -81,7 +84,7 @@ def get_seria_question(user):
 
 
 @bot.callback_query_handler(func=lambda call: True)
-def callback_query(call):
+def callback_query(call: CallbackQuery) -> None:
     user_id = call.from_user.id
     user = get_user(user_id)
     callback_data_type = type(call.data)
@@ -222,7 +225,7 @@ def handle_message(message):
             bot.reply_to(message, "Введите только число")
 
 
-def ask_next_question(user: dict, user_id: int, is_first: bool):
+def ask_next_question(user: User, user_id: int, is_first: bool) -> None:
     """
     Задаёт пользователю следующий вопрос из серии.
 
@@ -258,7 +261,7 @@ def ask_next_question(user: dict, user_id: int, is_first: bool):
         bot.send_message(user_id, f"Задача - {current_num}/{total}")
 
         # Берем первый вопрос из массива
-        question = user["seria_of_questions"][0]
+        question: Question = user["seria_of_questions"][0]
         # Изменяем доступ к полям в соответствии с новой структурой
         user["correct_answer_question"] = question["correctAnswer"]
         update_user(user_id, user)
@@ -302,8 +305,12 @@ def handle_series_answer(user: dict, user_id: int, user_answer: str):
 
 
 def replace_message(
-    chat_id, message_id, new_text, reply_markup=None, parse_mode="HTML"
-):
+    chat_id: int, 
+    message_id: int, 
+    new_text: str, 
+    reply_markup: InlineKeyboardMarkup | None = None, 
+    parse_mode: str = "HTML"
+) -> Message:
     """
     Сначала удаляет старое сообщение по chat_id и message_id,
     затем отправляет новое сообщение с указанным текстом и кнопками.
@@ -318,7 +325,7 @@ def replace_message(
     return sent_message
 
 
-def get_raiting_text(user_id):
+def get_raiting_text(user_id: int) -> str:
     user = get_user(user_id)
     users = get_users()
     total_tests = user["statistic"]["total_tests"]

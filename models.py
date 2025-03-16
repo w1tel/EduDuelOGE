@@ -10,7 +10,7 @@ class Question(TypedDict):
     correctAnswer: str
     sequenceNumber: int
     code: str
-
+    solutionExplanation: str
 
 
 class Statistic(TypedDict):
@@ -26,7 +26,7 @@ class User(TypedDict):
     state: str
     correct_answer_question: str | None
     seria_of_questions: list[Question]
-
+    solutionExplanation: str
 
 # Тип для словаря пользователей
 Users = dict[int, User] 

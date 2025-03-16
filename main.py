@@ -8,7 +8,9 @@ from inline_keyboards import (
     get_markup_test_menu,
     get_markup_settings_menu,
     get_markup_back_button,
+    get_markup_solution_button
 )
+
 from utils import register_user, is_registered, update_user, get_user, get_users
 from questions import get_random_tasks, get_random_task
 from constants import HELP_COMMAND_TEXT, START_MAIN_MENU_TEXT
@@ -74,6 +76,7 @@ def start_message(message: Message) -> None:
             "state": STATE_START,
             "correct_answer_question": None,
             "seria_of_questions": [],
+            "solutionExplanation": None
         }
         register_user(user_id, user_data)
     else:
@@ -141,6 +144,7 @@ def callback_query(call: CallbackQuery) -> None:
 
         user["state"] = STATE_WAITING_ANSWER
         user["correct_answer_question"] = random_question["correctAnswer"]
+        user["solutionExplanation"] = random_question['solutionExplanation']
         update_user(user_id, user)
     elif call.data == "cb_stats":
         bot.answer_callback_query(call.id, "Мой рейтинг")
@@ -176,7 +180,11 @@ def callback_query(call: CallbackQuery) -> None:
             new_text=START_MAIN_MENU_TEXT,
             reply_markup=get_markup_main_menu(),
         )
-
+    elif call.data == "cb_solution":
+        bot.answer_callback_query(call.id)
+        replace_message(chat_id=call.message.chat.id,
+             message_id=call.message.id,
+             new_text=user['solutionExplanation'])
 
 @bot.message_handler(commands=["help"])
 def help_message(message: Message) -> None:
@@ -201,9 +209,10 @@ def handle_message(message: Message) -> None:
             user["statistic"]["correct_answers"] += 1
             user["statistic"]["total_tests"] += 1
         else:
-            bot.send_message(user_id, "Увы, ответ не верный!")
+            bot.send_message(user_id, "Увы, ответ не верный!", reply_markup=get_markup_solution_button())
             user["statistic"]["total_tests"] += 1
             user["state"] = STATE_START
+
         user["correct_answer_question"] = None
         user["statistic"]["success_rate"] = int(
             (user["statistic"]["correct_answers"] / user["statistic"]["total_tests"])

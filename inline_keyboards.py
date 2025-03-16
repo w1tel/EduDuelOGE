@@ -42,3 +42,9 @@ def get_markup_settings_menu():
         InlineKeyboardButton("Назад", callback_data="cb_back"),
     )
     return markup
+
+def get_markup_solution_button():
+    markup = InlineKeyboardMarkup()
+    markup.row_width = 1
+    markup.add(InlineKeyboardButton("Решение", callback_data="cb_solution"), InlineKeyboardButton("Далее", callback_data="cb_next"))
+    return markup

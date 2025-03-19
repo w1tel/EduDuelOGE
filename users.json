@@ -45,15 +45,15 @@
     "1845480898": {
         "username": "J_S_0_o_N",
         "statistic": {
-            "total_tests": 28,
+            "total_tests": 31,
             "correct_answers": 7,
-            "success_rate": 25
+            "success_rate": 22
         },
         "number_of_tests": 3,
         "state": "main_menu",
-        "correct_answer_question": null,
+        "correct_answer_question": "[1, 2, 3, 4]",
         "seria_of_questions": [],
-        "solutionExplanation": "Программа проверяет каждое число на чётность (остаток от деления на 2 равен 0) и выводит его, если условие выполняется."
+        "solutionExplanation": "Список передаётся по ссылке, функция modify_list изменяет его, добавляя 4."
     },
     "1016777088": {
         "username": "mremneva_psy",

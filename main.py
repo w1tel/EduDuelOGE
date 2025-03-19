@@ -189,7 +189,11 @@ def callback_query(call: CallbackQuery) -> None:
         reply_markup=get_markup_main_menu())
     elif call.data == "cb_next":
         bot.answer_callback_query(call.id)
-        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=START_MAIN_MENU_TEXT, reply_markup=get_markup_main_menu())
+        if user["state"] == STATE_SERIA_QUESTIONS:
+            ask_next_question(user, user_id, is_first=False)
+        else:    
+            replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=START_MAIN_MENU_TEXT, reply_markup=get_markup_main_menu())
+
 @bot.message_handler(commands=["help"])
 def help_message(message: Message) -> None:
     bot.send_message(message.chat.id, HELP_COMMAND_TEXT, parse_mode="HTML")
@@ -319,7 +323,7 @@ def handle_series_answer(user: User, user_id: int, user_answer: str) -> None:
         bot.send_message(user_id, "Правильный ответ!")
         user["statistic"]["correct_answers"] += 1
     else:
-        bot.send_message(user_id, "Увы, ответ не верный!")
+        bot.send_message(user_id, "Увы, ответ не верный!", reply_markup=get_markup_solution_button())
 
     user["statistic"]["total_tests"] += 1
     user["correct_answer_question"] = None  # Сбрасываем, т.к. ответ уже дан
@@ -327,7 +331,9 @@ def handle_series_answer(user: User, user_id: int, user_answer: str) -> None:
         user["statistic"]["correct_answers"] / user["statistic"]["total_tests"] * 100
     )
     # Переходим к следующему вопросу (или заканчиваем)
-    ask_next_question(user, user_id, is_first=False)
+    if correct:
+        ask_next_question(user, user_id, is_first=False)
+
 
 
 def replace_message(

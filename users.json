@@ -45,15 +45,15 @@
     "1845480898": {
         "username": "J_S_0_o_N",
         "statistic": {
-            "total_tests": 16,
-            "correct_answers": 6,
-            "success_rate": 37
+            "total_tests": 28,
+            "correct_answers": 7,
+            "success_rate": 25
         },
         "number_of_tests": 3,
         "state": "main_menu",
         "correct_answer_question": null,
         "seria_of_questions": [],
-        "solutionExplanation": "Цикл проходит по числам 1, 3, 5, используя шаг 2. Выводится строка '1 3 5'."
+        "solutionExplanation": "Программа проверяет каждое число на чётность (остаток от деления на 2 равен 0) и выводит его, если условие выполняется."
     },
     "1016777088": {
         "username": "mremneva_psy",

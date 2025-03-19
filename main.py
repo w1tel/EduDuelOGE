@@ -182,10 +182,14 @@ def callback_query(call: CallbackQuery) -> None:
         )
     elif call.data == "cb_solution":
         bot.answer_callback_query(call.id)
-        replace_message(chat_id=call.message.chat.id,
-             message_id=call.message.id,
-             new_text=user['solutionExplanation'])
-
+        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=user['solutionExplanation'])
+        bot.send_message(
+        chat_id=call.message.chat.id,
+        text=START_MAIN_MENU_TEXT,
+        reply_markup=get_markup_main_menu())
+    elif call.data == "cb_next":
+        bot.answer_callback_query(call.id)
+        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=START_MAIN_MENU_TEXT, reply_markup=get_markup_main_menu())
 @bot.message_handler(commands=["help"])
 def help_message(message: Message) -> None:
     bot.send_message(message.chat.id, HELP_COMMAND_TEXT, parse_mode="HTML")
@@ -208,10 +212,15 @@ def handle_message(message: Message) -> None:
             bot.send_message(user_id, "Правильный ответ!")
             user["statistic"]["correct_answers"] += 1
             user["statistic"]["total_tests"] += 1
+            bot.send_message(
+            chat_id=message.chat.id,
+            text=START_MAIN_MENU_TEXT,
+            reply_markup=get_markup_main_menu(),
+        )
         else:
             bot.send_message(user_id, "Увы, ответ не верный!", reply_markup=get_markup_solution_button())
             user["statistic"]["total_tests"] += 1
-            user["state"] = STATE_START
+        user["state"] = STATE_START
 
         user["correct_answer_question"] = None
         user["statistic"]["success_rate"] = int(
@@ -220,11 +229,7 @@ def handle_message(message: Message) -> None:
         )
         
         update_user(user_id, user)
-        bot.send_message(
-            chat_id=message.chat.id,
-            text=START_MAIN_MENU_TEXT,
-            reply_markup=get_markup_main_menu(),
-        )
+        
     elif current_state == STATE_SERIA_QUESTIONS:
         handle_series_answer(user=user, user_id=user_id, user_answer=message.text)
     elif current_state == STATE_NUM_OF_TESTS:

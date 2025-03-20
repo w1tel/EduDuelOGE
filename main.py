@@ -8,7 +8,8 @@ from inline_keyboards import (
     get_markup_test_menu,
     get_markup_settings_menu,
     get_markup_back_button,
-    get_markup_solution_button
+    get_markup_solution_button,
+    get_markup_next_button
 )
 
 from utils import register_user, is_registered, update_user, get_user, get_users
@@ -137,8 +138,6 @@ def callback_query(call: CallbackQuery) -> None:
     elif call.data == "cb_random":
         bot.answer_callback_query(call.id)
         random_question = get_random_task()
-
-        # Используем новый шаблон для форматирования вопроса
         message_text = format_question(random_question)
         bot.send_message(call.message.chat.id, message_text, parse_mode="HTML")
 
@@ -182,17 +181,41 @@ def callback_query(call: CallbackQuery) -> None:
         )
     elif call.data == "cb_solution":
         bot.answer_callback_query(call.id)
-        replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=user['solutionExplanation'])
-        bot.send_message(
-        chat_id=call.message.chat.id,
-        text=START_MAIN_MENU_TEXT,
-        reply_markup=get_markup_main_menu())
+        
+        # Если пользователь в серии вопросов:
+        if user["state"] == STATE_SERIA_QUESTIONS:
+            # Показываем решение + кнопку "Дальше" (или "Следующий вопрос")
+            replace_message(
+                chat_id=call.message.chat.id,
+                message_id=call.message.id,
+                new_text=user['solutionExplanation'],
+                # тут должна быть ваша разметка с кнопкой cb_next
+                reply_markup=get_markup_next_button()  
+            )
+        else:
+            # Логика для одиночного вопроса
+            replace_message(
+                chat_id=call.message.chat.id,
+                message_id=call.message.id,
+                new_text=user['solutionExplanation']
+            )
+            # Возвращаем пользователя в главное меню
+            bot.send_message(
+                chat_id=call.message.chat.id,
+                text=START_MAIN_MENU_TEXT,
+                reply_markup=get_markup_main_menu()
+            )
     elif call.data == "cb_next":
         bot.answer_callback_query(call.id)
         if user["state"] == STATE_SERIA_QUESTIONS:
             ask_next_question(user, user_id, is_first=False)
-        else:    
-            replace_message(chat_id=call.message.chat.id, message_id=call.message.id, new_text=START_MAIN_MENU_TEXT, reply_markup=get_markup_main_menu())
+        else:
+            replace_message(
+                chat_id=call.message.chat.id,
+                message_id=call.message.id,
+                new_text=START_MAIN_MENU_TEXT,
+                reply_markup=get_markup_main_menu()
+            )
 
 @bot.message_handler(commands=["help"])
 def help_message(message: Message) -> None:
@@ -222,7 +245,7 @@ def handle_message(message: Message) -> None:
             reply_markup=get_markup_main_menu(),
         )
         else:
-            bot.send_message(user_id, "Увы, ответ не верный!", reply_markup=get_markup_solution_button())
+            bot.send_message(user_id, "Увы, ответ не верный!", reply_markup=get_markup_solution_button(mode=user["state"]))
             user["statistic"]["total_tests"] += 1
         user["state"] = STATE_START
 
@@ -323,7 +346,8 @@ def handle_series_answer(user: User, user_id: int, user_answer: str) -> None:
         bot.send_message(user_id, "Правильный ответ!")
         user["statistic"]["correct_answers"] += 1
     else:
-        bot.send_message(user_id, "Увы, ответ не верный!", reply_markup=get_markup_solution_button())
+        bot.send_message(user_id, "Увы, ответ не верный!",
+                         reply_markup=get_markup_solution_button(mode=user["state"]))
 
     user["statistic"]["total_tests"] += 1
     user["correct_answer_question"] = None  # Сбрасываем, т.к. ответ уже дан

@@ -51,9 +51,9 @@
         },
         "number_of_tests": 3,
         "state": "main_menu",
-        "correct_answer_question": "[1, 2, 3, 4]",
+        "correct_answer_question": "6",
         "seria_of_questions": [],
-        "solutionExplanation": "Список передаётся по ссылке, функция modify_list изменяет его, добавляя 4."
+        "solutionExplanation": "Рассматриваем таблицу истинности, находим количество истинных значений."
     },
     "1016777088": {
         "username": "mremneva_psy",

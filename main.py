@@ -317,6 +317,7 @@ def ask_next_question(user: User, user_id: int, is_first: bool) -> None:
         question: Question = user["seria_of_questions"][0]
         # Изменяем доступ к полям в соответствии с новой структурой
         user["correct_answer_question"] = question["correctAnswer"]
+        user["solutionExplanation"] = question["solutionExplanation"]
         update_user(user_id, user)
         
         # Используем новый шаблон для форматирования вопроса
